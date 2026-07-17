@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "deploy": "wrangler deploy",
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro"
@@ -18,5 +19,8 @@
   "allowScripts": {
     "esbuild@0.28.1": true,
     "fsevents@2.3.3": true
+  },
+  "devDependencies": {
+    "wrangler": "^4.112.0"
   }
 }

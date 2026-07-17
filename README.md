@@ -11,6 +11,7 @@ Install dependencies with `npm install`, then use:
 | --- | --- |
 | `npm run dev -- --background` | Start the Astro development server in the background |
 | `npm run build` | Generate the production site in `dist/` |
+| `npm run deploy` | Deploy the generated site to Cloudflare Workers |
 | `npm run preview` | Preview the production build |
 | `npm run sync` | Refresh Astro content types |
 
@@ -29,3 +30,10 @@ Manage the background server with `astro dev status`, `astro dev logs`, and
 - `archive/legacy-site/` preserves the original website capture and is not used at runtime.
 
 Review `docs/PROJECT_STATE.md` and `docs/DECISIONS.md` before making project changes.
+
+## Deployment
+
+The repository is connected to Cloudflare Workers Builds. Use `npm run build`
+as the build command and `npm run deploy` as the deploy command. The site is
+fully static; it does not use an Astro server adapter, Worker script, secrets,
+or runtime environment variables.

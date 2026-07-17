@@ -29,3 +29,4 @@ pnpm-debug.log*
 
 # Local source images waiting to be curated into public/images/
 website-images/
+archive/

@@ -39,7 +39,7 @@ Recreate La Baguette de Normandy's current website in Astro with a visual and SE
 - Link treatment: avoid default persistent underlines and hover fills. Use weight, quick text-color changes, clear active markers, and keyboard focus outlines to distinguish interactive text. Navigation text remains stationary and uses a reserved gutter so active markers never overlap labels; motion is reserved for button feedback outside the navigation.
 - Initial launch: No forms; use static contact and order links only.
 - Hosting: Cloudflare free tier; analytics and search console integration are deferred.
-- Deployment target: Git-connected Cloudflare Pages using the `main` branch, `npm run build`, and the `dist` output directory. The project remains fully static and does not require the Cloudflare Astro adapter or runtime secrets.
+- Deployment target: Git-connected Cloudflare Workers Builds using the `main` branch, `npm run build`, and `npm run deploy`. Wrangler uploads the generated `dist` directory as static assets. The project does not require the Cloudflare Astro adapter, a Worker script, or runtime secrets.
 
 ## Existing site scope
 
@@ -101,10 +101,24 @@ The following claims are supported by legacy website copy and the bakery's Googl
 6. Test accessibility, performance, responsive behavior, links, and the production build.
 7. Review the complete recreation and decide what should be rewritten, moved, combined, added, or removed.
 
+## Demo readiness
+
+The project is close to a client-demo stage, but it is not launch-complete. The
+shared visual system, responsive navigation, footer, homepage direction,
+business-information pages, menu structure, product data, and product imagery
+are all present. The demo is suitable for reviewing overall direction,
+responsive flow, navigation, catalog presentation, and content priorities.
+
+Before treating the site as production-ready, complete the client decisions in
+`docs/DECISIONS.md`, verify imported prices and business details, finish the
+remaining skeletal information-page content, review seasonal availability
+language, and perform a final browser/accessibility/link check on the deployed
+domain.
+
 ## Current repository status
 
 - The project builds as a static Astro site.
-- Lightweight Cloudflare preparation includes an explicit static Astro target, a pinned Node 22 build version, `robots.txt`, and a generated top-level `404.html`.
+- Lightweight Cloudflare preparation includes an explicit static Astro target, a pinned Node 22 build version, a small `wrangler.jsonc`, `robots.txt`, and a generated top-level `404.html`. The Wrangler asset configuration preserves Astro's trailing-slash routes and serves the custom 404 page for missing assets.
 - Browser identity assets are derived from the approved square logo and include multi-size ICO/PNG favicons, an Apple touch icon, 192px and 512px manifest icons, theme colors, and `site.webmanifest`; the original Astro starter favicon was removed.
 - Twenty routes are present, including the custom 404 page.
 - Shared base and catalog layouts reduce repeated route markup. Reusable components cover the site head, brand logo, header menu, footer, product cards and grids, filtered product listings, page introductions, section headings, calls to action, hero imagery, navigation lists, category links, and visit information.
@@ -123,6 +137,14 @@ The following claims are supported by legacy website copy and the bakery's Googl
 - Any directory named `website-images/` is intentionally ignored as a local intake folder. Images become tracked only after they are reviewed and moved into an appropriate `public/images/` location.
 - Information pages and some landing-page sections remain content skeletons and still need legacy content and images recreated.
 - Page-title convention: the homepage leads with the business name; inner pages lead with the specific page topic and end with the business name so the unique subject is visible first in tabs and search results.
+
+## Recommended next phase
+
+1. Deploy and review the `workers.dev` demo on desktop, tablet, and mobile.
+2. Resolve the launch and catalog questions in `docs/DECISIONS.md` with the client.
+3. Replace remaining placeholder or skeletal copy without changing the settled structure.
+4. Confirm prices, availability, contact details, and ordering behavior.
+5. Connect the production domain only after the demo content has been approved.
 
 ## Documentation workflow
 

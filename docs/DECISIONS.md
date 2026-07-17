@@ -7,17 +7,17 @@ passwords, tokens, or other credentials here.
 
 ## Cloudflare launch
 
-- [ ] Create a Cloudflare Pages project from the GitHub repository.
+- [ ] Confirm the Git-connected Cloudflare Workers deployment succeeds.
   - Build command: `npm run build`
-  - Output directory: `dist`
-  - Pages URL:
+  - Deploy command: `npm run deploy`
+  - Preview URL:
 
 - [ ] Choose the primary production address.
   - Recommended: `https://labaguettedenormandy.com/`, with `www` redirected to it.
   - Your answer:
 
-- [ ] Approve the `pages.dev` preview, then connect the domain through the
-  Pages project's **Custom domains** screen.
+- [ ] Approve the `workers.dev` preview, then connect the production domain
+  through the Worker project's domain settings.
   - Completion note/date:
 
 ## Before public launch
