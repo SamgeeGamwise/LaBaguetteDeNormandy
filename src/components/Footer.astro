@@ -1,0 +1,80 @@
+---
+import {
+  business,
+  informationNavigation,
+  menuNavigation,
+} from "../data/navigation";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <section>
+    <h2>{business.name}</h2>
+
+    <address>
+      {business.address.map((line) => (
+        <>
+          {line}<br />
+        </>
+      ))}
+    </address>
+
+    <p>
+      <a href={business.phoneHref}>
+        {business.phoneDisplay}
+      </a>
+    </p>
+  </section>
+
+  <nav aria-label="Menu links">
+    <h2>Menu</h2>
+
+    <ul>
+      {menuNavigation.map((item) => (
+        <li>
+          <a href={item.href}>{item.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <section>
+    <h2>Hours</h2>
+
+    {business.hours.map((hours) => (
+      <p>{hours}</p>
+    ))}
+  </section>
+
+  <nav aria-label="Information links">
+    <h2>Information</h2>
+
+    <ul>
+      {informationNavigation.map((item) => (
+        <li>
+          <a href={item.href}>{item.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <p>
+    © {year} {business.name}
+  </p>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 2rem 1rem;
+    border-top: 1px solid;
+  }
+
+  .site-footer ul {
+    padding-left: 1.25rem;
+  }
+
+  address {
+    font-style: normal;
+  }
+</style>

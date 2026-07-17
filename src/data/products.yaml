@@ -1,0 +1,23 @@
+- id: butter-croissant
+  slug: butter-croissant
+  name: Butter Croissant
+  category: viennoiseries
+  description: Traditional French croissant made with layers of butter.
+  image: /images/products/FrenchButterCroissant.jpg
+  alt: Freshly baked French butter croissant
+  priceCents: 425
+  available: true
+  featured: true
+  sortOrder: 10
+
+- id: pain-au-chocolat
+  slug: pain-au-chocolat
+  name: Pain Au Chocolat
+  category: viennoiseries
+  description: Flaky French pastry filled with rich chocolate batons.
+  image: /images/products/PainAuChocolat.jpg
+  alt: French chocolate croissant on a bakery tray
+  priceCents: 475
+  available: true
+  featured: false
+  sortOrder: 20

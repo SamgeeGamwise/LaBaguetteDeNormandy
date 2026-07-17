@@ -1,0 +1,54 @@
+ ---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  product: CollectionEntry<"products">;
+}
+
+const { product } = Astro.props;
+const {
+  name,
+  description,
+  image,
+  alt,
+  priceCents,
+  priceText,
+} = product.data;
+
+const formattedPrice =
+  priceText ??
+  (priceCents !== undefined
+    ? new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(priceCents / 100)
+    : null);
+---
+
+<article class="product-card">
+  <img
+    src={image}
+    alt={alt}
+    width="600"
+    height="400"
+    loading="lazy"
+  />
+
+  <div class="product-card__content">
+    <h2>{name}</h2>
+    <p>{description}</p>
+    {formattedPrice && <p class="product-card__price">{formattedPrice}</p>}
+  </div>
+</article>
+
+<style>
+  .product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .product-card__price {
+    font-weight: 700;
+  }
+</style>

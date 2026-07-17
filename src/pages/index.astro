@@ -1,11 +1,27 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout
+  title="French Bakery in Parker, Colorado | La Baguette de Normandy"
+  description="Visit La Baguette de Normandy, a French bakery in Parker, Colorado offering breads, pastries, cakes, crepes, breakfast, and lunch."
+>
+  <header>
+    <h1>French Bakery in Parker, Colorado</h1>
+
+    <p>
+      Explore fresh French breads, croissants, pastries, cakes, tarts,
+      crepes, breakfast, and savory bakery favorites in Parker, Colorado.
+    </p>
+  </header>
+
+  <section>
+    <h2>Explore the Bakery</h2>
+
+    <p>
+      <a href="/menu/">Browse the full menu</a>,
+      <a href="/about-us/">learn about the bakery</a>, or
+      <a href="/location/">view our location and hours</a>.
+    </p>
+  </section>
+</BaseLayout>

@@ -1,0 +1,65 @@
+:root {
+  --color-text: #231f1b;
+  --color-background: #fffdf8;
+  --color-surface: #f6f0e6;
+  --color-accent: #8b2635;
+  --color-border: #ddd3c5;
+
+  --font-body: Georgia, "Times New Roman", serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+
+  --content-width: 72rem;
+  --spacing-page: clamp(1rem, 4vw, 2rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.15;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.page-container {
+  width: min(
+    calc(100% - (var(--spacing-page) * 2)),
+    var(--content-width)
+  );
+  margin-inline: auto;
+  padding-block: 3rem;
+}

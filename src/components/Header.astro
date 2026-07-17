@@ -1,0 +1,67 @@
+---
+import {
+  business,
+  primaryNavigation,
+} from "../data/navigation";
+
+const currentPath = Astro.url.pathname;
+
+function isCurrent(href: string) {
+  return href === "/"
+    ? currentPath === "/"
+    : currentPath.startsWith(href);
+}
+---
+
+<header class="site-header">
+  <a href="/" class="site-name">
+    {business.name}
+  </a>
+
+  <nav aria-label="Primary navigation">
+    <ul>
+      {primaryNavigation.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            aria-current={isCurrent(item.href) ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <a
+    href={business.orderUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Order Online
+  </a>
+</header>
+
+<style>
+  .site-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid;
+  }
+
+  .site-name {
+    font-weight: bold;
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+</style>
