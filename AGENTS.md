@@ -10,6 +10,13 @@ Manage the background server with `astro dev stop`, `astro dev status`, and `ast
 
 ## Documentation
 
+Before planning or implementing project work, review the repository planning documents:
+
+- `docs/PROJECT_STATE.md` for the current scope, settled direction, and implementation progress; Codex should keep this file current
+- `docs/DECISIONS.md` for unanswered choices that require user or client input
+
+When a choice in `docs/DECISIONS.md` is answered, remove it from that file and update `docs/PROJECT_STATE.md`. Never store credentials, API keys, recovery codes, or other secrets in these files.
+
 Full documentation: https://docs.astro.build
 
 Consult these guides before working on related tasks:
