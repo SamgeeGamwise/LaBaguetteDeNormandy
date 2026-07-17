@@ -1,0 +1,23 @@
+---
+import { business } from "../data/business";
+import { primaryNavigation } from "../data/navigation";
+import ButtonLink from "./ButtonLink.astro";
+import NavigationList from "./NavigationList.astro";
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+---
+
+<div class="site-menu__content">
+  <nav aria-label="Primary navigation">
+    <NavigationList items={primaryNavigation} currentPath={currentPath} />
+  </nav>
+
+  <div class="site-header__actions">
+    <ButtonLink href={business.phoneHref}>Call for special orders</ButtonLink>
+    <ButtonLink href={business.orderUrl} external>Order online</ButtonLink>
+  </div>
+</div>

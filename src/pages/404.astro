@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ButtonLink from "../components/ButtonLink.astro";
+import PageIntro from "../components/PageIntro.astro";
+---
+
+<BaseLayout
+  title="Page Not Found | La Baguette de Normandy"
+  description="The requested page could not be found. Return to La Baguette de Normandy or browse the bakery menu."
+>
+  <PageIntro
+    eyebrow="404"
+    title="Page not found"
+    description="The page you requested may have moved or may no longer be available."
+  />
+
+  <section>
+    <h2>Continue browsing</h2>
+    <div class="hero-actions">
+      <ButtonLink href="/">Return home</ButtonLink>
+      <ButtonLink href="/menu/">Browse the menu</ButtonLink>
+    </div>
+  </section>
+</BaseLayout>

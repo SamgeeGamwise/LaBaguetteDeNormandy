@@ -1,14 +1,15 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageIntro from "../components/PageIntro.astro";
+import CatalogPageLayout from "../layouts/CatalogPageLayout.astro";
 ---
 
-<BaseLayout
+<CatalogPageLayout
   title="French Crepes in Parker, Colorado | La Baguette de Normandy"
   description="Browse sweet and savory French crepes served at La Baguette de Normandy in Parker, Colorado."
+  heading="French Crepes"
+  intro="Explore sweet and savory French crepes served at our bakery in Parker, Colorado."
+  category="crepes"
+  listingTitle="Crepe Selection"
 >
-  <PageIntro title="French Crepes" description="Explore sweet and savory French crepes served at our bakery in Parker, Colorado." />
-
   <section>
     <h2>More from the Bakery</h2>
 
@@ -18,4 +19,4 @@ import PageIntro from "../components/PageIntro.astro";
       <a href="/location/">location and hours</a>.
     </p>
   </section>
-</BaseLayout>
+</CatalogPageLayout>

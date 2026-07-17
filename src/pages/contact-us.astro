@@ -25,6 +25,35 @@ import { business } from "../data/business";
     </p>
 
     <p>
+      Email: <a href={business.emailHref}>{business.emailDisplay}</a>
+    </p>
+
+    <p>{business.phoneOrderNote}</p>
+
+    <p>
+      <a href={business.directionsUrl} target="_blank" rel="noopener noreferrer">
+        Get directions to the bakery
+      </a>
+    </p>
+  </section>
+
+  <section>
+    <h2>Orders</h2>
+
+    <p>
+      A limited selection is available through our{" "}
+      <a href={business.orderUrl} target="_blank" rel="noopener noreferrer">
+        online ordering site
+      </a>. Please call the bakery for all other orders.
+    </p>
+  </section>
+
+  <section>
+    <h2>Bakery Hours</h2>
+
+    {business.hours.map((hours) => <p>{hours}</p>)}
+
+    <p>
       You can also review our <a href="/location/">location and hours</a> or{" "}
       browse the <a href="/menu/">bakery menu</a>.
     </p>

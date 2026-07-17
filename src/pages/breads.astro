@@ -1,14 +1,15 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageIntro from "../components/PageIntro.astro";
+import CatalogPageLayout from "../layouts/CatalogPageLayout.astro";
 ---
 
-<BaseLayout
+<CatalogPageLayout
   title="French Breads in Parker, Colorado | La Baguette de Normandy"
   description="Browse traditional French baguettes, brioche, loaves, and specialty breads baked in Parker, Colorado."
+  heading="French Breads"
+  intro="Browse French baguettes, brioche, sandwich breads, and specialty loaves prepared at our Parker bakery."
+  category="breads"
+  listingTitle="Bread Selection"
 >
-  <PageIntro title="French Breads" description="Browse French baguettes, brioche, sandwich breads, and specialty loaves prepared at our Parker bakery." />
-
   <section>
     <h2>Explore More</h2>
 
@@ -18,4 +19,4 @@ import PageIntro from "../components/PageIntro.astro";
       <a href="/location/">bakery location and hours</a>.
     </p>
   </section>
-</BaseLayout>
+</CatalogPageLayout>

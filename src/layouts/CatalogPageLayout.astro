@@ -1,0 +1,36 @@
+---
+import type { ProductCategory } from "../data/productCategories";
+import PageIntro from "../components/PageIntro.astro";
+import ProductListing from "../components/ProductListing.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  intro: string;
+  category: ProductCategory;
+  listingTitle: string;
+  sourcePath?: string;
+}
+
+const {
+  title,
+  description,
+  heading,
+  intro,
+  category,
+  listingTitle,
+  sourcePath,
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <PageIntro title={heading} description={intro} />
+  <ProductListing
+    category={category}
+    title={listingTitle}
+    sourcePath={sourcePath}
+  />
+  <slot />
+</BaseLayout>

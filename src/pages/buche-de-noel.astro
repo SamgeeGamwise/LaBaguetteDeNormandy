@@ -1,14 +1,16 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageIntro from "../components/PageIntro.astro";
+import CatalogPageLayout from "../layouts/CatalogPageLayout.astro";
 ---
 
-<BaseLayout
+<CatalogPageLayout
   title="Bûche de Noël in Parker, Colorado | La Baguette de Normandy"
   description="Learn about seasonal Bûche de Noël cakes from La Baguette de Normandy in Parker, Colorado."
+  heading="Bûche de Noël"
+  intro="Learn about seasonal Bûche de Noël cakes prepared by La Baguette de Normandy for holiday celebrations in Parker, Colorado."
+  category="seasonal"
+  listingTitle="Bûche de Noël Selection"
+  sourcePath="/buche-de-noel/"
 >
-  <PageIntro title="Bûche de Noël" description="Learn about seasonal Bûche de Noël cakes prepared by La Baguette de Normandy for holiday celebrations in Parker, Colorado." />
-
   <section>
     <h2>Seasonal Availability</h2>
 
@@ -18,4 +20,4 @@ import PageIntro from "../components/PageIntro.astro";
       browse our <a href="/cakes/">cake selection</a>.
     </p>
   </section>
-</BaseLayout>
+</CatalogPageLayout>

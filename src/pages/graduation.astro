@@ -1,14 +1,15 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageIntro from "../components/PageIntro.astro";
+import CatalogPageLayout from "../layouts/CatalogPageLayout.astro";
 ---
 
-<BaseLayout
+<CatalogPageLayout
   title="Graduation Cakes and Desserts in Parker, CO | La Baguette de Normandy"
   description="Explore graduation cakes, pastries, and French desserts for celebrations in Parker, Colorado."
+  heading="Graduation Cakes and Desserts"
+  intro="Celebrate a graduation with French cakes, pastries, and desserts prepared by our bakery in Parker, Colorado."
+  category="graduation"
+  listingTitle="Graduation Cake Gallery"
 >
-  <PageIntro title="Graduation Cakes and Desserts" description="Celebrate a graduation with French cakes, pastries, and desserts prepared by our bakery in Parker, Colorado." />
-
   <section>
     <h2>Plan a Graduation Order</h2>
 
@@ -18,4 +19,4 @@ import PageIntro from "../components/PageIntro.astro";
       <a href="/contact-us/">contact the bakery</a> to discuss availability.
     </p>
   </section>
-</BaseLayout>
+</CatalogPageLayout>

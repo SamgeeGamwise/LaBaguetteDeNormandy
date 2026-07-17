@@ -2,6 +2,9 @@ export const business = {
   name: "La Baguette de Normandy",
   phoneDisplay: "303-805-9130",
   phoneHref: "tel:+13038059130",
+  emailDisplay: "orders@labaguettedenormandy.com",
+  emailHref: "mailto:orders@labaguettedenormandy.com",
+  phoneOrderNote: "Please call before 1:00 PM for bakery orders.",
   address: [
     "16524 Keystone Blvd, Unit C",
     "Parker, CO 80134",

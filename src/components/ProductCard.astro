@@ -13,6 +13,7 @@ const {
   alt,
   priceCents,
   priceText,
+  sizeText,
 } = product.data;
 
 const formattedPrice =
@@ -26,31 +27,90 @@ const formattedPrice =
 ---
 
 <article class="product-card">
-  {image && (
-    <img
-      src={image}
-      alt={alt ?? name}
-      width="600"
-      height="400"
-      loading="lazy"
-    />
-  )}
+  <div class="product-card__media">
+    {image ? (
+      <img
+        src={image}
+        alt={alt ?? name}
+        width="600"
+        height="450"
+        loading="lazy"
+      />
+    ) : (
+      <span>Image coming soon</span>
+    )}
+  </div>
 
   <div class="product-card__content">
-    <h2>{name}</h2>
+    <h3>{name}</h3>
     {description && <p>{description}</p>}
-    {formattedPrice && <p class="product-card__price">{formattedPrice}</p>}
+
+    <div class="product-card__details">
+      {sizeText && <p class="product-card__size">Size: {sizeText}</p>}
+      {formattedPrice && <p class="product-card__price">{formattedPrice}</p>}
+    </div>
   </div>
 </article>
 
 <style>
-  .product-card img {
+  .product-card {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+
+  .product-card__media {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 4 / 3;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-surface-cool);
+  }
+
+  .product-card__media img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .product-card__media span {
+    padding: 1rem;
+    color: var(--color-muted);
+    text-align: center;
+  }
+
+  .product-card__content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .product-card h3 {
+    min-block-size: 3.6em;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .product-card__details {
+    min-block-size: 3.25rem;
+    margin-top: auto;
+    padding-top: 0.75rem;
+  }
+
+  .product-card__details p + p {
+    margin-top: 0.25rem;
+  }
+
+  .product-card__size {
+    font-size: 0.9375rem;
   }
 
   .product-card__price {
+    color: var(--color-text);
     font-weight: 700;
   }
 </style>

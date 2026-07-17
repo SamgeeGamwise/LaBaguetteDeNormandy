@@ -1,6 +1,7 @@
 ---
 import { business } from "../data/business";
 import { informationNavigation, menuNavigation } from "../data/navigation";
+import BrandLogo from "./BrandLogo.astro";
 import NavigationList from "./NavigationList.astro";
 
 const year = new Date().getFullYear();
@@ -9,16 +10,17 @@ const year = new Date().getFullYear();
 <footer class="site-footer">
   <div class="site-footer__inner">
     <div class="site-footer__grid">
-      <section>
-        <h2>{business.name}</h2>
+      <div>
+        <BrandLogo class="site-footer__logo" />
         <p>French bakery, patisserie, and café in Parker, Colorado.</p>
         <p><a href={business.phoneHref}>Call {business.phoneDisplay}</a></p>
+        <p><a href={business.emailHref}>{business.emailDisplay}</a></p>
         <p>
           <a href={business.orderUrl} target="_blank" rel="noopener noreferrer">
             Order online
           </a>
         </p>
-      </section>
+      </div>
 
       <section>
         <h2>Visit</h2>

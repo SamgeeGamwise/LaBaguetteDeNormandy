@@ -1,48 +1,40 @@
 ---
-import { business } from "../data/business";
-import { primaryNavigation } from "../data/navigation";
-import ButtonLink from "./ButtonLink.astro";
-import NavigationList from "./NavigationList.astro";
+import BrandLogo from "./BrandLogo.astro";
+import HeaderMenuContent from "./HeaderMenuContent.astro";
 
 const currentPath = Astro.url.pathname;
 ---
 
 <header class="site-header">
   <div class="site-header__inner">
-    <a href="/" class="site-name">
-      {business.name}
-    </a>
+    <BrandLogo class="site-logo" responsive loading="eager" />
 
     <div class="site-menu site-menu--desktop">
-      <div class="site-menu__content">
-        <nav aria-label="Primary navigation">
-          <NavigationList items={primaryNavigation} currentPath={currentPath} />
-        </nav>
-
-        <div class="site-header__actions">
-          <ButtonLink href={business.phoneHref}>Call for special orders</ButtonLink>
-          <ButtonLink href={business.orderUrl} external>
-            Order online
-          </ButtonLink>
-        </div>
-      </div>
+      <HeaderMenuContent currentPath={currentPath} />
     </div>
 
     <details class="site-menu site-menu--mobile">
-      <summary>Menu</summary>
+      <summary>
+        <span class="menu-toggle__label menu-toggle__label--menu">Menu</span>
+        <span class="menu-toggle__label menu-toggle__label--close">Close</span>
 
-      <div class="site-menu__content">
-        <nav aria-label="Primary navigation">
-          <NavigationList items={primaryNavigation} currentPath={currentPath} />
-        </nav>
+        <svg
+          class="menu-toggle__icon menu-toggle__icon--menu"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+        <svg
+          class="menu-toggle__icon menu-toggle__icon--close"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="m6 6 12 12M18 6 6 18" />
+        </svg>
+      </summary>
 
-        <div class="site-header__actions">
-          <ButtonLink href={business.phoneHref}>Call for special orders</ButtonLink>
-          <ButtonLink href={business.orderUrl} external>
-            Order online
-          </ButtonLink>
-        </div>
-      </div>
+      <HeaderMenuContent currentPath={currentPath} />
     </details>
   </div>
 </header>

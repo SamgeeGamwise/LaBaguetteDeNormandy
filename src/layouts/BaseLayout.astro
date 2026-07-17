@@ -1,7 +1,7 @@
 ---
-import Head from '../components/Head.astro';
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import SiteHead from "../components/SiteHead.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -14,17 +14,13 @@ const { title, description, pageClass } = Astro.props;
 ---
 
 <!DOCTYPE html>
-
 <html lang="en">
-	<Head
-		title={title}
-    	description={description}
-	/>
-	<body>
-		<Header />
-		<main class:list={["page-container", pageClass]}>
-			<slot />
-		</main>
-		<Footer />
-	</body>
+  <SiteHead title={title} description={description} />
+  <body>
+    <Header />
+    <main class:list={["page-container", pageClass]}>
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>

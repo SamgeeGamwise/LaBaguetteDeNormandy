@@ -1,14 +1,16 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageIntro from "../components/PageIntro.astro";
+import CatalogPageLayout from "../layouts/CatalogPageLayout.astro";
 ---
 
-<BaseLayout
+<CatalogPageLayout
   title="French Christmas Desserts in Parker, CO | La Baguette de Normandy"
   description="Explore seasonal French Christmas desserts and holiday bakery specialties in Parker, Colorado."
+  heading="French Christmas Desserts"
+  intro="Explore seasonal French desserts and holiday bakery specialties from La Baguette de Normandy in Parker, Colorado."
+  category="seasonal"
+  listingTitle="Holiday Selection"
+  sourcePath="/christmas-goodies/"
 >
-  <PageIntro title="French Christmas Desserts" description="Explore seasonal French desserts and holiday bakery specialties from La Baguette de Normandy in Parker, Colorado." />
-
   <section>
     <h2>Holiday Ordering</h2>
 
@@ -18,4 +20,4 @@ import PageIntro from "../components/PageIntro.astro";
       <a href="/contact-us/">contact the bakery</a> for current information.
     </p>
   </section>
-</BaseLayout>
+</CatalogPageLayout>

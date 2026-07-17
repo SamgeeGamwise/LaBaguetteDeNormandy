@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CategoryLinks from "../components/CategoryLinks.astro";
 import PageIntro from "../components/PageIntro.astro";
+import ProductListing from "../components/ProductListing.astro";
+import { menuProductSections } from "../data/productCategories";
 ---
 
 <BaseLayout
@@ -14,4 +16,22 @@ import PageIntro from "../components/PageIntro.astro";
   />
 
   <CategoryLinks />
+
+  <section class="menu-catalog-intro" aria-labelledby="menu-catalog-title">
+    <h2 id="menu-catalog-title">Browse the Menu</h2>
+    <p>
+      Selection, availability, and prices may change. Please contact the bakery
+      to confirm current offerings and special orders.
+    </p>
+  </section>
+
+  {menuProductSections.map(({ category, label }) => (
+    <ProductListing category={category} title={label} showNotice={false} />
+  ))}
 </BaseLayout>
+
+<style>
+  .menu-catalog-intro {
+    max-width: 48rem;
+  }
+</style>

@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { file } from "astro/loaders";
 import { z } from "astro/zod";
+import { productCategoryValues } from "./data/productCategories";
 
 const products = defineCollection({
   loader: file("src/data/products.yaml"),
@@ -10,19 +11,7 @@ const products = defineCollection({
     slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
 
     name: z.string().min(1),
-    category: z.enum([
-      "viennoiseries",
-      "breads",
-      "pastries",
-      "cakes",
-      "tarts",
-      "savory",
-      "breakfast-lunch",
-      "crepes",
-      "petits-fours",
-      "graduation",
-      "seasonal",
-    ]),
+    category: z.enum(productCategoryValues),
 
     description: z.string().min(1).optional(),
 

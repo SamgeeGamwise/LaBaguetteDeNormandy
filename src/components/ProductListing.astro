@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import type { ProductCategory } from "../data/productCategories";
+import ProductGrid from "./ProductGrid.astro";
+
+interface Props {
+  category: ProductCategory;
+  title: string;
+  sourcePath?: string;
+  showNotice?: boolean;
+}
+
+const { category, title, sourcePath, showNotice = true } = Astro.props;
+const products = (await getCollection("products", ({ data }) =>
+  data.category === category &&
+  (!sourcePath || new URL(data.sourceUrl).pathname === sourcePath)
+)).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+---
+
+<section class="product-listing" aria-labelledby={`${category}-products`}>
+  <div class="product-listing__header">
+    <h2 id={`${category}-products`}>{title}</h2>
+    {showNotice && (
+      <p>
+        Selection, availability, and prices may change. Please contact the bakery
+        to confirm current offerings and special orders.
+      </p>
+    )}
+  </div>
+
+  {products.length > 0 ? (
+    <ProductGrid products={products} />
+  ) : (
+    <p>No products have been added to this section yet.</p>
+  )}
+</section>
+
+<style>
+  .product-listing__header {
+    max-width: 48rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

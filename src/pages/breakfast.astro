@@ -1,14 +1,15 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageIntro from "../components/PageIntro.astro";
+import CatalogPageLayout from "../layouts/CatalogPageLayout.astro";
 ---
 
-<BaseLayout
+<CatalogPageLayout
   title="French Bakery Breakfast in Parker, CO | La Baguette de Normandy"
   description="Explore breakfast selections, pastries, breads, and morning bakery favorites in Parker, Colorado."
+  heading="Breakfast at the Bakery"
+  intro="Start the day with breakfast selections, baked goods, and morning favorites from our French bakery in Parker, Colorado."
+  category="breakfast-lunch"
+  listingTitle="Breakfast and Lunch Selection"
 >
-  <PageIntro title="Breakfast at the Bakery" description="Start the day with breakfast selections, baked goods, and morning favorites from our French bakery in Parker, Colorado." />
-
   <section>
     <h2>Plan Your Visit</h2>
 
@@ -18,4 +19,4 @@ import PageIntro from "../components/PageIntro.astro";
       <a href="/location/">location and hours</a>.
     </p>
   </section>
-</BaseLayout>
+</CatalogPageLayout>

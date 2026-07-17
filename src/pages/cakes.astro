@@ -1,14 +1,15 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageIntro from "../components/PageIntro.astro";
+import CatalogPageLayout from "../layouts/CatalogPageLayout.astro";
 ---
 
-<BaseLayout
+<CatalogPageLayout
   title="French Cakes in Parker, Colorado | La Baguette de Normandy"
   description="Browse French cakes and celebration desserts from La Baguette de Normandy in Parker, Colorado."
+  heading="French Cakes"
+  intro="Browse French cakes and celebration desserts available from our bakery in Parker, Colorado."
+  category="cakes"
+  listingTitle="Cake Selection"
 >
-  <PageIntro title="French Cakes" description="Browse French cakes and celebration desserts available from our bakery in Parker, Colorado." />
-
   <section>
     <h2>Cakes for Special Occasions</h2>
 
@@ -18,4 +19,4 @@ import PageIntro from "../components/PageIntro.astro";
       <a href="/contact-us/">contact the bakery</a>.
     </p>
   </section>
-</BaseLayout>
+</CatalogPageLayout>

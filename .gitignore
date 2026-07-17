@@ -13,12 +13,19 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# environment variables
+# environment variables and local Cloudflare development secrets
 .env
-.env.production
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+.wrangler/
 
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
+# JetBrains settings
 .idea/
+
+# Local source images waiting to be curated into public/images/
+website-images/

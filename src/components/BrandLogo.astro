@@ -1,0 +1,39 @@
+---
+import { business } from "../data/business";
+
+interface Props {
+  class: string;
+  responsive?: boolean;
+  loading?: "eager" | "lazy";
+}
+
+const {
+  class: className,
+  responsive = false,
+  loading = "lazy",
+} = Astro.props;
+---
+
+<a href="/" class={className} aria-label={`${business.name} home`}>
+  {responsive ? (
+    <picture>
+      <source media="(min-width: 1100px)" srcset="/logo_square.webp" />
+      <img
+        src="/logo.webp"
+        alt=""
+        width="400"
+        height="216"
+        loading={loading}
+        fetchpriority={loading === "eager" ? "high" : "auto"}
+      />
+    </picture>
+  ) : (
+    <img
+      src="/logo_square.webp"
+      alt=""
+      width="206"
+      height="206"
+      loading={loading}
+    />
+  )}
+</a>
