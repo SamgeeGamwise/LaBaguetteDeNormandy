@@ -1,26 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageIntro from "../components/PageIntro.astro";
 ---
 
 <BaseLayout
   title="Savory French Bakery Menu in Parker, CO | La Baguette de Normandy"
   description="Explore savory French bakery items, lunch selections, sandwiches, quiches, and other prepared foods in Parker, Colorado."
 >
-  <header>
-    <h1>Savory Bakery Menu</h1>
-
-    <p>
-      Explore savory bakery selections, lunch favorites, and prepared foods
-      available from our French bakery in Parker, Colorado.
-    </p>
-  </header>
+  <PageIntro title="Savory Bakery Menu" description="Explore savory bakery selections, lunch favorites, and prepared foods available from our French bakery in Parker, Colorado." />
 
   <section>
     <h2>More Menu Options</h2>
 
     <p>
-      Browse <a href="/breakfast/">breakfast</a>,
-      <a href="/crepes/">crepes</a>, or the
+      Browse{" "}<a href="/breakfast/">breakfast</a>,{" "}
+      <a href="/crepes/">crepes</a>, or the{" "}
       <a href="/menu/">complete bakery menu</a>.
     </p>
   </section>

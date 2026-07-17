@@ -1,80 +1,53 @@
 ---
-import {
-  business,
-  informationNavigation,
-  menuNavigation,
-} from "../data/navigation";
+import { business } from "../data/business";
+import { informationNavigation, menuNavigation } from "../data/navigation";
+import NavigationList from "./NavigationList.astro";
 
 const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
-  <section>
-    <h2>{business.name}</h2>
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <section>
+        <h2>{business.name}</h2>
+        <p>French bakery, patisserie, and café in Parker, Colorado.</p>
+        <p><a href={business.phoneHref}>Call {business.phoneDisplay}</a></p>
+        <p>
+          <a href={business.orderUrl} target="_blank" rel="noopener noreferrer">
+            Order online
+          </a>
+        </p>
+      </section>
 
-    <address>
-      {business.address.map((line) => (
-        <>
-          {line}<br />
-        </>
-      ))}
-    </address>
+      <section>
+        <h2>Visit</h2>
+        <address>
+          {business.address.map((line) => (
+            <>
+              {line}<br />
+            </>
+          ))}
+        </address>
+        <p><a href="/location/">Location and directions</a></p>
+        <div class="site-footer__hours">
+          {business.hours.map((hours) => (
+            <p>{hours}</p>
+          ))}
+        </div>
+      </section>
 
-    <p>
-      <a href={business.phoneHref}>
-        {business.phoneDisplay}
-      </a>
-    </p>
-  </section>
+      <nav aria-label="Menu links">
+        <h2>Menu</h2>
+        <NavigationList items={menuNavigation} />
+      </nav>
 
-  <nav aria-label="Menu links">
-    <h2>Menu</h2>
+      <nav aria-label="Information links">
+        <h2>Information</h2>
+        <NavigationList items={informationNavigation} />
+      </nav>
+    </div>
 
-    <ul>
-      {menuNavigation.map((item) => (
-        <li>
-          <a href={item.href}>{item.label}</a>
-        </li>
-      ))}
-    </ul>
-  </nav>
-
-  <section>
-    <h2>Hours</h2>
-
-    {business.hours.map((hours) => (
-      <p>{hours}</p>
-    ))}
-  </section>
-
-  <nav aria-label="Information links">
-    <h2>Information</h2>
-
-    <ul>
-      {informationNavigation.map((item) => (
-        <li>
-          <a href={item.href}>{item.label}</a>
-        </li>
-      ))}
-    </ul>
-  </nav>
-
-  <p>
-    © {year} {business.name}
-  </p>
+    <p class="site-footer__legal">© {year} {business.name}</p>
+  </div>
 </footer>
-
-<style>
-  .site-footer {
-    padding: 2rem 1rem;
-    border-top: 1px solid;
-  }
-
-  .site-footer ul {
-    padding-left: 1.25rem;
-  }
-
-  address {
-    font-style: normal;
-  }
-</style>

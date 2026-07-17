@@ -1,67 +1,48 @@
 ---
-import {
-  business,
-  primaryNavigation,
-} from "../data/navigation";
+import { business } from "../data/business";
+import { primaryNavigation } from "../data/navigation";
+import ButtonLink from "./ButtonLink.astro";
+import NavigationList from "./NavigationList.astro";
 
 const currentPath = Astro.url.pathname;
-
-function isCurrent(href: string) {
-  return href === "/"
-    ? currentPath === "/"
-    : currentPath.startsWith(href);
-}
 ---
 
 <header class="site-header">
-  <a href="/" class="site-name">
-    {business.name}
-  </a>
+  <div class="site-header__inner">
+    <a href="/" class="site-name">
+      {business.name}
+    </a>
 
-  <nav aria-label="Primary navigation">
-    <ul>
-      {primaryNavigation.map((item) => (
-        <li>
-          <a
-            href={item.href}
-            aria-current={isCurrent(item.href) ? "page" : undefined}
-          >
-            {item.label}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </nav>
+    <div class="site-menu site-menu--desktop">
+      <div class="site-menu__content">
+        <nav aria-label="Primary navigation">
+          <NavigationList items={primaryNavigation} currentPath={currentPath} />
+        </nav>
 
-  <a
-    href={business.orderUrl}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Order Online
-  </a>
+        <div class="site-header__actions">
+          <ButtonLink href={business.phoneHref}>Call for special orders</ButtonLink>
+          <ButtonLink href={business.orderUrl} external>
+            Order online
+          </ButtonLink>
+        </div>
+      </div>
+    </div>
+
+    <details class="site-menu site-menu--mobile">
+      <summary>Menu</summary>
+
+      <div class="site-menu__content">
+        <nav aria-label="Primary navigation">
+          <NavigationList items={primaryNavigation} currentPath={currentPath} />
+        </nav>
+
+        <div class="site-header__actions">
+          <ButtonLink href={business.phoneHref}>Call for special orders</ButtonLink>
+          <ButtonLink href={business.orderUrl} external>
+            Order online
+          </ButtonLink>
+        </div>
+      </div>
+    </details>
+  </div>
 </header>
-
-<style>
-  .site-header {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1rem;
-    border-bottom: 1px solid;
-  }
-
-  .site-name {
-    font-weight: bold;
-  }
-
-  nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-</style>

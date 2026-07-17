@@ -1,27 +1,21 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageIntro from "../components/PageIntro.astro";
 ---
 
 <BaseLayout
   title="French Petits Fours in Parker, CO | La Baguette de Normandy"
   description="Explore French petits fours and bite-sized desserts for gatherings, celebrations, and special occasions in Parker, Colorado."
 >
-  <header>
-    <h1>French Petits Fours</h1>
-
-    <p>
-      Explore bite-sized French desserts suited for gatherings, celebrations,
-      and special occasions in Parker, Colorado.
-    </p>
-  </header>
+  <PageIntro title="French Petits Fours" description="Explore bite-sized French desserts suited for gatherings, celebrations, and special occasions in Parker, Colorado." />
 
   <section>
     <h2>Special-Occasion Desserts</h2>
 
     <p>
-      Browse <a href="/cakes/">cakes</a>,
-      <a href="/graduation/">graduation desserts</a>, or
-      <a href="/contact-us-2/">contact the bakery</a> about availability.
+      Browse{" "}<a href="/cakes/">cakes</a>,{" "}
+      <a href="/graduation/">graduation desserts</a>, or{" "}
+      <a href="/contact-us/">contact the bakery</a> about availability.
     </p>
   </section>
 </BaseLayout>

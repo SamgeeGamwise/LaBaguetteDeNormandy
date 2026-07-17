@@ -26,17 +26,19 @@ const formattedPrice =
 ---
 
 <article class="product-card">
-  <img
-    src={image}
-    alt={alt}
-    width="600"
-    height="400"
-    loading="lazy"
-  />
+  {image && (
+    <img
+      src={image}
+      alt={alt ?? name}
+      width="600"
+      height="400"
+      loading="lazy"
+    />
+  )}
 
   <div class="product-card__content">
     <h2>{name}</h2>
-    <p>{description}</p>
+    {description && <p>{description}</p>}
     {formattedPrice && <p class="product-card__price">{formattedPrice}</p>}
   </div>
 </article>

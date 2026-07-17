@@ -1,26 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageIntro from "../components/PageIntro.astro";
 ---
 
 <BaseLayout
   title="French Tarts in Parker, Colorado | La Baguette de Normandy"
   description="Browse French fruit tarts, chocolate tarts, and seasonal tart selections from our Parker bakery."
 >
-  <header>
-    <h1>French Tarts</h1>
-
-    <p>
-      Explore French tarts and seasonal dessert selections prepared at our
-      bakery in Parker, Colorado.
-    </p>
-  </header>
+  <PageIntro title="French Tarts" description="Explore French tarts and seasonal dessert selections prepared at our bakery in Parker, Colorado." />
 
   <section>
     <h2>More Desserts</h2>
 
     <p>
-      Browse <a href="/cakes/">French cakes</a>,
-      <a href="/pastry/">pastries</a>, or the
+      Browse{" "}<a href="/cakes/">French cakes</a>,{" "}
+      <a href="/pastry/">pastries</a>, or the{" "}
       <a href="/menu/">full menu</a>.
     </p>
   </section>

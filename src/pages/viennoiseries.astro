@@ -1,26 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageIntro from "../components/PageIntro.astro";
 ---
 
 <BaseLayout
   title="French Croissants and Viennoiseries in Parker, CO | La Baguette de Normandy"
   description="Browse French croissants and viennoiseries baked for customers in Parker, Colorado."
 >
-  <header>
-    <h1>French Viennoiseries</h1>
-
-    <p>
-      Explore French croissants and laminated pastries prepared with classic
-      bakery techniques for customers in Parker, Colorado.
-    </p>
-  </header>
+  <PageIntro title="Croissants and Viennoiseries" description="Explore French croissants and laminated pastries prepared with classic French baking techniques in Parker, Colorado." />
 
   <section>
     <h2>Continue Browsing</h2>
 
     <p>
-      View our <a href="/pastry/">pastries</a>,
-      <a href="/breads/">French breads</a>, or
+      View our{" "}<a href="/pastry/">pastries</a>,{" "}
+      <a href="/breads/">French breads</a>, or the{" "}
       <a href="/menu/">full bakery menu</a>.
     </p>
   </section>

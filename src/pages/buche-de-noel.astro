@@ -1,26 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageIntro from "../components/PageIntro.astro";
 ---
 
 <BaseLayout
   title="Bûche de Noël in Parker, Colorado | La Baguette de Normandy"
   description="Learn about seasonal Bûche de Noël cakes from La Baguette de Normandy in Parker, Colorado."
 >
-  <header>
-    <h1>Bûche de Noël</h1>
-
-    <p>
-      Learn about seasonal Bûche de Noël cakes prepared by La Baguette de
-      Normandy for holiday celebrations in Parker, Colorado.
-    </p>
-  </header>
+  <PageIntro title="Bûche de Noël" description="Learn about seasonal Bûche de Noël cakes prepared by La Baguette de Normandy for holiday celebrations in Parker, Colorado." />
 
   <section>
     <h2>Seasonal Availability</h2>
 
     <p>
-      Availability and ordering dates may change each season. Please
-      <a href="/contact-us-2/">contact the bakery</a> for current details or
+      Availability and ordering dates may change each season. Please{" "}
+      <a href="/contact-us/">contact the bakery</a> for current details or
       browse our <a href="/cakes/">cake selection</a>.
     </p>
   </section>

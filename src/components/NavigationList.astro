@@ -1,0 +1,31 @@
+---
+interface NavigationItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  items: readonly NavigationItem[];
+  currentPath?: string;
+}
+
+const { items, currentPath } = Astro.props;
+
+function isCurrent(href: string) {
+  if (!currentPath) return false;
+  return href === "/" ? currentPath === "/" : currentPath.startsWith(href);
+}
+---
+
+<ul>
+  {items.map((item) => (
+    <li>
+      <a
+        href={item.href}
+        aria-current={isCurrent(item.href) ? "page" : undefined}
+      >
+        {item.label}
+      </a>
+    </li>
+  ))}
+</ul>

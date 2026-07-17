@@ -1,23 +1,1581 @@
-- id: butter-croissant
-  slug: butter-croissant
-  name: Butter Croissant
-  category: viennoiseries
-  description: Traditional French croissant made with layers of butter.
-  image: /images/products/FrenchButterCroissant.jpg
-  alt: Freshly baked French butter croissant
-  priceCents: 425
-  available: true
-  featured: true
+- id: "viennoiseries-croissant"
+  slug: "viennoiseries-croissant"
+  name: "Croissant"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/French-Butter-croissant.jpg?i=484094822"
+  alt: "Croissant"
+  priceCents: 435
   sortOrder: 10
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
 
-- id: pain-au-chocolat
-  slug: pain-au-chocolat
-  name: Pain Au Chocolat
-  category: viennoiseries
-  description: Flaky French pastry filled with rich chocolate batons.
-  image: /images/products/PainAuChocolat.jpg
-  alt: French chocolate croissant on a bakery tray
-  priceCents: 475
-  available: true
-  featured: false
+- id: "viennoiseries-almond-croissant"
+  slug: "viennoiseries-almond-croissant"
+  name: "Almond croissant"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Almond-Croissant.jpg?i=1692467096"
+  alt: "Almond croissant"
+  priceCents: 595
   sortOrder: 20
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "viennoiseries-almond-pain-au-chocolat"
+  slug: "viennoiseries-almond-pain-au-chocolat"
+  name: "Almond Pain au Chocolat"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Almond-Pain-au-Chocolat.jpg?i=484725349"
+  alt: "Almond p.au chocolat"
+  priceCents: 595
+  sortOrder: 30
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "viennoiseries-apple-danish"
+  slug: "viennoiseries-apple-danish"
+  name: "Apple danish"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Apple-Danish.jpg?i=2038796266"
+  alt: "Apple danish"
+  priceCents: 499
+  sortOrder: 40
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "viennoiseries-apple-turnover"
+  slug: "viennoiseries-apple-turnover"
+  name: "Apple turnover"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Apple-or-raspberry-Turnover.jpg?i=1058495236"
+  alt: "Apple turnover"
+  priceCents: 499
+  sortOrder: 50
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "viennoiseries-bear-claw"
+  slug: "viennoiseries-bear-claw"
+  name: "Bear claw"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Bear-Claw.jpg?i=160964043"
+  alt: "Bear claw"
+  priceCents: 499
+  sortOrder: 60
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "viennoiseries-brioche-feuilletee"
+  slug: "viennoiseries-brioche-feuilletee"
+  name: "Brioche Feuilletée"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Brioche-Feuilletee.jpg?i=2125812861"
+  alt: "Brioche feuilletee"
+  priceCents: 479
+  sortOrder: 70
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "viennoiseries-cinnamon-croissant"
+  slug: "viennoiseries-cinnamon-croissant"
+  name: "Cinnamon croissant"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/cinnamon-croissant.jpg?i=848561213"
+  alt: "Cinnamon croissant"
+  priceCents: 499
+  sortOrder: 80
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "viennoiseries-kouign-amann"
+  slug: "viennoiseries-kouign-amann"
+  name: "Kouign-Amann"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Kouign-amann.jpg?i=845056040"
+  alt: "Kouign amann"
+  priceCents: 499
+  sortOrder: 90
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "viennoiseries-oranais-croissant"
+  slug: "viennoiseries-oranais-croissant"
+  name: "Oranais croissant"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Oranais-Peach-croissant.jpg?i=220752316"
+  alt: "Oranais croissant"
+  priceCents: 559
+  sortOrder: 100
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "viennoiseries-pain-au-chocolat"
+  slug: "viennoiseries-pain-au-chocolat"
+  name: "Pain au chocolat"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Pain-au-chocolat.jpg?i=8084795"
+  alt: "Pain au chocolat"
+  priceCents: 489
+  sortOrder: 110
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "viennoiseries-pain-aux-raisins"
+  slug: "viennoiseries-pain-aux-raisins"
+  name: "Pain aux raisins"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Pain-aux-raisin.jpg?i=98758410"
+  alt: "Pain aux raisins"
+  priceCents: 499
+  sortOrder: 120
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "viennoiseries-raspberry-puff-croissant"
+  slug: "viennoiseries-raspberry-puff-croissant"
+  name: "Raspberry puff croissant"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Raspberry-puff-pastry.jpg?i=922484482"
+  alt: "Raspberry puff croissant"
+  priceCents: 499
+  sortOrder: 130
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "viennoiseries-strawberry-danish"
+  slug: "viennoiseries-strawberry-danish"
+  name: "Strawberry Danish"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Strawberry-danish.jpg?i=813729218"
+  alt: "Strawberry Danish"
+  priceCents: 499
+  sortOrder: 140
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "viennoiseries-raspberry-brioche-twist"
+  slug: "viennoiseries-raspberry-brioche-twist"
+  name: "Raspberry Brioche Twist"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Twiste-raspberry-brioche.jpg?i=1804535336"
+  alt: "Twiste Raspberry"
+  priceCents: 499
+  sortOrder: 150
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "viennoiseries-blueberry-cream-cheese-danish"
+  slug: "viennoiseries-blueberry-cream-cheese-danish"
+  name: "Blueberry cream cheese Danish"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Blueberry-cream-cheese-Danish.jpg?i=1653260678"
+  alt: "Blueberry cream cheese Danish"
+  priceCents: 499
+  sortOrder: 160
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "viennoiseries-breakfast-box"
+  slug: "viennoiseries-breakfast-box"
+  name: "Breakfast box"
+  category: "viennoiseries"
+  image: "https://labaguettedenormandy.com/wp-content/uploads/2020/05/sweet-breakfast.jpg"
+  alt: "Breakfast box"
+  priceCents: 3695
+  sortOrder: 170
+  sourceUrl: "https://labaguettedenormandy.com/viennoiseries/"
+  sourceType: "published-menu"
+
+- id: "breads-baguette-epi"
+  slug: "breads-baguette-epi"
+  name: "Baguette Épi"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Baguette-epis.jpg?i=1755226039"
+  alt: "Baguette Epis"
+  priceCents: 589
+  sortOrder: 180
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-brioche-parisienne"
+  slug: "breads-brioche-parisienne"
+  name: "Brioche Parisienne"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Brioche-Parisienne2.jpg.webp"
+  alt: "Brioche Parisienne"
+  priceCents: 799
+  sortOrder: 190
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-brioche-tressee"
+  slug: "breads-brioche-tressee"
+  name: "Brioche Tressée"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Brioche-tresee.jpg?i=1072375845"
+  alt: "Brioche Tressee"
+  priceCents: 899
+  sortOrder: 200
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-classic-baguette"
+  slug: "breads-classic-baguette"
+  name: "Classic baguette"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/classic-baguette-Baguette-moulee.jpg?i=1248216129"
+  alt: "Classic baguette"
+  priceCents: 375
+  sortOrder: 210
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-loaf-court-bread"
+  slug: "breads-loaf-court-bread"
+  name: "Loaf court bread"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Court-Bread.jpg?i=698857198"
+  alt: "Loaf court bread"
+  priceCents: 590
+  sortOrder: 220
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-cranberry-walnut-loaf"
+  slug: "breads-cranberry-walnut-loaf"
+  name: "Cranberry Walnut Loaf"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/loaf-cramberries-walnut.jpg?i=1886191780"
+  alt: "Loaf cranberries walnut"
+  priceCents: 859
+  sortOrder: 230
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-mini-baguette"
+  slug: "breads-mini-baguette"
+  name: "Mini Baguette"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Mini-Baguette.jpg?i=1143488689"
+  alt: "Mini Baguette"
+  priceCents: 150
+  sortOrder: 240
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-pain-de-mie"
+  slug: "breads-pain-de-mie"
+  name: "Pain de Mie"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Pain-de-mie.jpg?i=333545838"
+  alt: "Pain de Mie"
+  priceCents: 950
+  sizeText: "Sandwich Bread"
+  sortOrder: 250
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-bacon-cheese-roll"
+  slug: "breads-bacon-cheese-roll"
+  name: "Bacon-cheese roll"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/roll-with-bacon-cheese.jpg?i=310271616"
+  alt: "Bacon-cheese roll"
+  priceCents: 450
+  sortOrder: 260
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-seven-grains-whole-wheat"
+  slug: "breads-seven-grains-whole-wheat"
+  name: "Seven grains whole wheat"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Seven-grains-whole-wheat.jpg?i=1530791826"
+  alt: "Seven grains whole wheat"
+  priceCents: 850
+  sortOrder: 270
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-sourdough-miche"
+  slug: "breads-sourdough-miche"
+  name: "Sourdough miche"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Sourdough-Miche.jpg?i=1751783938"
+  alt: "Sourdough miche"
+  priceCents: 850
+  sortOrder: 280
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-square-loaf-bread"
+  slug: "breads-square-loaf-bread"
+  name: "Square loaf bread"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/square-loaf-bread.jpg?i=2110139110"
+  alt: "Square loaf bread"
+  priceCents: 590
+  sortOrder: 290
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-traditional-black-olive-baguette"
+  slug: "breads-traditional-black-olive-baguette"
+  name: "Traditional Black Olive Baguette"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Traditional-Baguette-black-Olive.jpg?i=1285488610"
+  alt: "Trad. Black olive"
+  priceCents: 459
+  sortOrder: 300
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-traditional-rosemary-baguette"
+  slug: "breads-traditional-rosemary-baguette"
+  name: "Traditional Rosemary Baguette"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Traditional-Baguette-Rosemary.jpg?i=828358157"
+  alt: "Trad. Rosemary"
+  priceCents: 459
+  sortOrder: 310
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-traditional-baguette"
+  slug: "breads-traditional-baguette"
+  name: "Traditional Baguette"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Traditional-Baguette.jpg?i=1243637613"
+  alt: "Traditional Baguette"
+  priceCents: 410
+  sortOrder: 320
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-traditional-sesame-seed-baguette"
+  slug: "breads-traditional-sesame-seed-baguette"
+  name: "Traditional Sesame Seed Baguette"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Traditional-Sesame-Seed-Baguette.jpg?i=914744940"
+  alt: "Traditional Sesame Seed"
+  priceCents: 459
+  sortOrder: 330
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-white-loaf-miche"
+  slug: "breads-white-loaf-miche"
+  name: "White loaf miche"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/white-loaf-miche.jpg?i=234585088"
+  alt: "White loaf miche"
+  priceCents: 699
+  sortOrder: 340
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "breads-traditional-miche"
+  slug: "breads-traditional-miche"
+  name: "Traditional Miche"
+  category: "breads"
+  image: "https://labaguettedenormandy.com/wp-content/uploads/2020/05/traditional-miche.jpg"
+  alt: "Traditional Miche"
+  priceCents: 799
+  sortOrder: 350
+  sourceUrl: "https://labaguettedenormandy.com/breads/"
+  sourceType: "published-menu"
+
+- id: "pastries-almond-pie"
+  slug: "pastries-almond-pie"
+  name: "Almond pie"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Almond-pie.jpg?i=1000329487"
+  alt: "Almond pie"
+  priceCents: 599
+  sortOrder: 360
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-peach-amandine"
+  slug: "pastries-peach-amandine"
+  name: "Peach amandine"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/uploads/2020/05/Peach_amandine-scaled.jpg"
+  alt: "Peach amandine"
+  priceCents: 599
+  sortOrder: 370
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-apple-crumble"
+  slug: "pastries-apple-crumble"
+  name: "Apple crumble"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Apple-Crumble.jpg?i=1314915433"
+  alt: "Apple crumble"
+  priceCents: 599
+  sortOrder: 380
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-apple-tart"
+  slug: "pastries-apple-tart"
+  name: "Apple tart"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Apple-tart.jpg?i=441469572"
+  alt: "Apple tart"
+  priceCents: 599
+  sortOrder: 390
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-black-forest"
+  slug: "pastries-black-forest"
+  name: "Black Forest"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Black-Forest-cake.jpg?i=1061978282"
+  alt: "Black Forest"
+  priceCents: 615
+  sortOrder: 400
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-blueberry-amandine"
+  slug: "pastries-blueberry-amandine"
+  name: "Blueberry amandine"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/uploads/2020/05/Blueberry_amandine-scaled.jpg"
+  alt: "Blueberry amandine"
+  priceCents: 599
+  sortOrder: 410
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-chocolate-tart"
+  slug: "pastries-chocolate-tart"
+  name: "Chocolate tart"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Chocolate-caramel-tart.jpg?i=404468703"
+  alt: "Chocolate tart"
+  priceCents: 615
+  sortOrder: 420
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-eclair"
+  slug: "pastries-eclair"
+  name: "Éclair"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/chocolate-eclair.jpg?i=15439754"
+  alt: "Eclair"
+  priceCents: 585
+  sortOrder: 430
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-chocolate-truffle"
+  slug: "pastries-chocolate-truffle"
+  name: "Chocolate Truffle"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Chocolate-Truffle.jpg?i=2066342374"
+  alt: "Chocolate Truffle"
+  priceCents: 615
+  sortOrder: 440
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-divorce-choux-puff"
+  slug: "pastries-divorce-choux-puff"
+  name: "Divorce (choux puff)"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Choux-puff-Divorce.jpg?i=2077460733"
+  alt: "Divorce (choux puff)"
+  priceCents: 615
+  sortOrder: 450
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-salambo-choux-puff"
+  slug: "pastries-salambo-choux-puff"
+  name: "Salambo (choux puff)"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/choux-puff-Salambo.jpg?i=1794018056"
+  alt: "Salambo (choux puff)"
+  priceCents: 575
+  sortOrder: 460
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-citronnier-cake"
+  slug: "pastries-citronnier-cake"
+  name: "Citronnier cake"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Citronnier-Cake-l.jpg?i=1211019813"
+  alt: "Citronnier cake"
+  priceCents: 615
+  sortOrder: 470
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-creme-brulee"
+  slug: "pastries-creme-brulee"
+  name: "Crème Brûlée"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Cream-Brulee.jpg?i=136867186"
+  alt: "Cream brulee"
+  priceCents: 599
+  sortOrder: 480
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-desire-coconut-meringue"
+  slug: "pastries-desire-coconut-meringue"
+  name: "Desire (coconut-Meringue)"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Desire-Coconut.jpg?i=224332367"
+  alt: "Desire (coconut-Meringue)"
+  priceCents: 619
+  sortOrder: 490
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-framboisier-raspberry"
+  slug: "pastries-framboisier-raspberry"
+  name: "Framboisier (Raspberry)"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Framboisier-cake.jpg?i=1564186698"
+  alt: "Framboisier ( raspberry )"
+  priceCents: 615
+  sortOrder: 500
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-ganachaux-chocolate"
+  slug: "pastries-ganachaux-chocolate"
+  name: "Ganachaux chocolate"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Ganachaux-chocolate.jpg?i=1313125140"
+  alt: "Ganachaux chocolate"
+  priceCents: 615
+  sortOrder: 510
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-le-duo-chocolate-coffee"
+  slug: "pastries-le-duo-chocolate-coffee"
+  name: "Le duo (chocolate/coffee)"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Le-Duo-chocolate-coffee.jpg?i=721988919"
+  alt: "Le duo (chocolate/coffee)"
+  priceCents: 615
+  sortOrder: 520
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-lemon-tart"
+  slug: "pastries-lemon-tart"
+  name: "Lemon tart"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/lemon-tart.jpg?i=2063865401"
+  alt: "Lemon tart"
+  priceCents: 595
+  sortOrder: 530
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-mixed-berry-tart"
+  slug: "pastries-mixed-berry-tart"
+  name: "Mixed Berry Tart"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Mixedberry-tart.jpg?i=1868985079"
+  alt: "Mixedberry tart"
+  priceCents: 595
+  sortOrder: 540
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-moka-chocolate"
+  slug: "pastries-moka-chocolate"
+  name: "Moka chocolate"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Moka-chocolate-cake.jpg?i=1861704136"
+  alt: "Moka chocolate"
+  priceCents: 615
+  sortOrder: 550
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-mont-blanc"
+  slug: "pastries-mont-blanc"
+  name: "Mont Blanc"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Mont-Blanc-cake.jpg?i=1992030897"
+  alt: "Mont Blanc"
+  priceCents: 615
+  sortOrder: 560
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-mystery-dresses-meringue"
+  slug: "pastries-mystery-dresses-meringue"
+  name: "Mystery dresses (meringue)"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Mystery-dressesl.jpg?i=996210235"
+  alt: "Mystery dresses (meringue)"
+  priceCents: 619
+  sortOrder: 570
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-praline-napoleon"
+  slug: "pastries-praline-napoleon"
+  name: "Praline Napoleon"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Napoleon-Praline.jpg?i=216275144"
+  alt: "Praline Napoleon"
+  priceCents: 615
+  sortOrder: 580
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-napoleon"
+  slug: "pastries-napoleon"
+  name: "Napoleon"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Napoleon.jpg?i=1467943837"
+  alt: "Napoleon"
+  priceCents: 615
+  sortOrder: 590
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-nenouko-milk-chocolate"
+  slug: "pastries-nenouko-milk-chocolate"
+  name: "Nenouko milk chocolate"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Nenouko-Milk-Chocolate.jpg?i=392174865"
+  alt: "Nenouko milk chocolate"
+  priceCents: 615
+  sortOrder: 600
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-nenouko-white-chocolate"
+  slug: "pastries-nenouko-white-chocolate"
+  name: "Nenouko white chocolate"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Nenouko-White-chocolate.jpg?i=678727116"
+  alt: "Nenouko white chocolate"
+  priceCents: 615
+  sortOrder: 610
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-opera"
+  slug: "pastries-opera"
+  name: "Opera"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Opera-Cake.jpg?i=330925745"
+  alt: "Opera"
+  priceCents: 615
+  sortOrder: 620
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-raspberry-tart"
+  slug: "pastries-raspberry-tart"
+  name: "Raspberry tart"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/raspberry-tart.jpg?i=1968493237"
+  alt: "Raspberry tart"
+  priceCents: 595
+  sortOrder: 630
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-royal"
+  slug: "pastries-royal"
+  name: "Royal"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Royal-Cake.jpg?i=549607682"
+  alt: "Royal"
+  priceCents: 615
+  sortOrder: 640
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-saint-domingue"
+  slug: "pastries-saint-domingue"
+  name: "Saint Domingue"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Opera.jpg?i=1549065701"
+  alt: "Saint Domingue"
+  priceCents: 615
+  sortOrder: 650
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-three-chocolate"
+  slug: "pastries-three-chocolate"
+  name: "Three Chocolate"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Three-Chocolate-cake.jpg?i=629033194"
+  alt: "Three chocolate"
+  priceCents: 615
+  sortOrder: 660
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "pastries-truffade-cake"
+  slug: "pastries-truffade-cake"
+  name: "Truffade cake"
+  category: "pastries"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Truffade-chocolate-ganache.jpg?i=166230715"
+  alt: "Truffade cake"
+  priceCents: 615
+  sortOrder: 670
+  sourceUrl: "https://labaguettedenormandy.com/pastry/"
+  sourceType: "published-menu"
+
+- id: "cakes-black-forest-6p"
+  slug: "cakes-black-forest-6p"
+  name: "Black Forest 6p"
+  category: "cakes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Black-forest-6p.jpg?i=1999699653"
+  alt: "Black Forest 6p"
+  priceCents: 4255
+  sortOrder: 680
+  sourceUrl: "https://labaguettedenormandy.com/cakes/"
+  sourceType: "published-menu"
+
+- id: "cakes-forestier-cake-6p"
+  slug: "cakes-forestier-cake-6p"
+  name: "Forestier cake 6p"
+  category: "cakes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Forestier-Cake-6p.jpg?i=1329842527"
+  alt: "Forestier cake 6p"
+  priceCents: 4255
+  sortOrder: 690
+  sourceUrl: "https://labaguettedenormandy.com/cakes/"
+  sourceType: "published-menu"
+
+- id: "cakes-strawberry-cake-6p"
+  slug: "cakes-strawberry-cake-6p"
+  name: "Strawberry cake 6p"
+  category: "cakes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Strawberry-cake-6p.jpg?i=1048935001"
+  alt: "Strawberry cake 6p"
+  priceCents: 4255
+  sortOrder: 700
+  sourceUrl: "https://labaguettedenormandy.com/cakes/"
+  sourceType: "published-menu"
+
+- id: "cakes-framboisier-cake-6p"
+  slug: "cakes-framboisier-cake-6p"
+  name: "Framboisier cake 6p"
+  category: "cakes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Frambosier-cake-6p.jpg?i=1218273359"
+  alt: "Framboisier cake 6p"
+  priceCents: 4255
+  sortOrder: 710
+  sourceUrl: "https://labaguettedenormandy.com/cakes/"
+  sourceType: "published-menu"
+
+- id: "cakes-chocolat-moka-6p"
+  slug: "cakes-chocolat-moka-6p"
+  name: "Chocolat Moka 6p"
+  category: "cakes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/cakes/chocolatemochacake.jpg?i=176470294"
+  alt: "Chocolat Moka 6p"
+  priceCents: 4255
+  sortOrder: 720
+  sourceUrl: "https://labaguettedenormandy.com/cakes/"
+  sourceType: "published-menu"
+
+- id: "cakes-opera-cake-6p"
+  slug: "cakes-opera-cake-6p"
+  name: "Opera Cake 6p"
+  category: "cakes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/cakes/cakeopera2016.png?i=2070717548"
+  alt: "Opera Cake 6p"
+  priceCents: 4255
+  sortOrder: 730
+  sourceUrl: "https://labaguettedenormandy.com/cakes/"
+  sourceType: "published-menu"
+
+- id: "cakes-royal-cake-6p"
+  slug: "cakes-royal-cake-6p"
+  name: "Royal Cake 6p"
+  category: "cakes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/cakes/cakeroyal2016.png?i=1528719851"
+  alt: "Royal Cake 6p"
+  priceCents: 4255
+  sortOrder: 740
+  sourceUrl: "https://labaguettedenormandy.com/cakes/"
+  sourceType: "published-menu"
+
+- id: "cakes-three-chocolate-6p"
+  slug: "cakes-three-chocolate-6p"
+  name: "Three Chocolate 6p"
+  category: "cakes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/cakes/caketroischocolates2016.png?i=2101705204"
+  alt: "Three Chocolate 6p"
+  priceCents: 4255
+  sortOrder: 750
+  sourceUrl: "https://labaguettedenormandy.com/cakes/"
+  sourceType: "published-menu"
+
+- id: "cakes-raspberry-delight-6p"
+  slug: "cakes-raspberry-delight-6p"
+  name: "Raspberry Delight 6p"
+  category: "cakes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/cakes/raspberrydelightcake.png?i=831254411"
+  alt: "Raspberry Delight 6p"
+  priceCents: 4255
+  sortOrder: 760
+  sourceUrl: "https://labaguettedenormandy.com/cakes/"
+  sourceType: "published-menu"
+
+- id: "cakes-grand-marnier-6-8p"
+  slug: "cakes-grand-marnier-6-8p"
+  name: "Grand Marnier 6/8p"
+  category: "cakes"
+  image: "https://labaguettedenormandy.com/wp-content/uploads/2020/05/Grand-marnier-rotated.jpg"
+  alt: "Grand Marnier 6/8p"
+  priceCents: 4255
+  sortOrder: 770
+  sourceUrl: "https://labaguettedenormandy.com/cakes/"
+  sourceType: "published-menu"
+
+- id: "cakes-charlotte-mixberry-6p"
+  slug: "cakes-charlotte-mixberry-6p"
+  name: "Charlotte Mixberry 6p"
+  category: "cakes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/cakes/cakecharlottemixedberry2016.png?i=1219214165"
+  alt: "Charlotte Mixberry 6p"
+  priceCents: 4255
+  sortOrder: 780
+  sourceUrl: "https://labaguettedenormandy.com/cakes/"
+  sourceType: "published-menu"
+
+- id: "cakes-le-duo-6p"
+  slug: "cakes-le-duo-6p"
+  name: "Le Duo 6p"
+  category: "cakes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/cakes/IMG_0392-7.JPG?i=538769755"
+  alt: "Le Duo 6p"
+  priceCents: 4255
+  sortOrder: 790
+  sourceUrl: "https://labaguettedenormandy.com/cakes/"
+  sourceType: "published-menu"
+
+- id: "cakes-lemon-cake-6p"
+  slug: "cakes-lemon-cake-6p"
+  name: "Lemon Cake 6p"
+  category: "cakes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/cakes/21-3.jpg?i=1816145840"
+  alt: "Lemon Cake 6p"
+  priceCents: 4255
+  sortOrder: 800
+  sourceUrl: "https://labaguettedenormandy.com/cakes/"
+  sourceType: "published-menu"
+
+- id: "savory-ham-and-cheese-croissant"
+  slug: "savory-ham-and-cheese-croissant"
+  name: "Ham and Cheese Croissant"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/uploads/2020/05/Croissant_HamCheese-scaled.jpg"
+  alt: "Croissant Ham Cheese"
+  priceCents: 799
+  sortOrder: 810
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "savory-croque-campagnard"
+  slug: "savory-croque-campagnard"
+  name: "Croque campagnard"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Croque-Campagnard.jpg?i=1813497178"
+  alt: "Croque campagnard"
+  priceCents: 859
+  sortOrder: 820
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "savory-croque-monsieur"
+  slug: "savory-croque-monsieur"
+  name: "Croque Monsieur"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Croque-Monsieur.jpg?i=891320798"
+  alt: "Croque Monsieur"
+  priceCents: 799
+  sortOrder: 830
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "savory-ham-and-cheese-quiche"
+  slug: "savory-ham-and-cheese-quiche"
+  name: "Ham and Cheese Quiche"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Ham-cheese-quiche.jpg?i=1123770897"
+  alt: "Ham-cheese quiche"
+  priceCents: 595
+  sortOrder: 840
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "savory-forestiere-quiche"
+  slug: "savory-forestiere-quiche"
+  name: "Forestière Quiche"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Quiche-Forestiere6p-8p.jpg?i=1305750215"
+  alt: "Forestiere Quiche"
+  priceCents: 3995
+  sizeText: "6/8P"
+  sortOrder: 850
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "savory-croissant-sausage"
+  slug: "savory-croissant-sausage"
+  name: "Croissant sausage"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/sausage-croissantl.jpg?i=1688540961"
+  alt: "Croissant sausage"
+  priceCents: 589
+  sortOrder: 860
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "savory-spinach-and-cheese-quiche"
+  slug: "savory-spinach-and-cheese-quiche"
+  name: "Spinach and Cheese Quiche"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Spinach-cheese-quiche.jpg?i=569292439"
+  alt: "Spinach-cheese quiche"
+  priceCents: 595
+  sortOrder: 870
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "savory-three-cheese-quiche"
+  slug: "savory-three-cheese-quiche"
+  name: "Three cheese quiche"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Three-cheese-quiche.jpg?i=2105376816"
+  alt: "Three cheese quiche"
+  priceCents: 595
+  sortOrder: 880
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "savory-vegetable-and-cheese-quiche"
+  slug: "savory-vegetable-and-cheese-quiche"
+  name: "Vegetable and Cheese Quiche"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Veggie-cheese-quiche.jpg?i=1142672305"
+  alt: "Veggie cheese quiche"
+  priceCents: 595
+  sortOrder: 890
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "savory-quiche-lorraine-bacon-and-cheese"
+  slug: "savory-quiche-lorraine-bacon-and-cheese"
+  name: "Quiche Lorraine (Bacon and Cheese)"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Quiche-Lorraine.jpg?i=742659972"
+  alt: "Quiche lorraine (bacon-cheese)"
+  priceCents: 595
+  sortOrder: 900
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "savory-vegetable-and-chicken-quiche"
+  slug: "savory-vegetable-and-chicken-quiche"
+  name: "Vegetable and Chicken Quiche"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Quiche-Veggie-chicken-6p-8p.jpg?i=1937105672"
+  alt: "Veggie-chicken Quiche"
+  priceCents: 3995
+  sizeText: "6/8P"
+  sortOrder: 910
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "savory-savory-breakfast-box"
+  slug: "savory-savory-breakfast-box"
+  name: "Savory Breakfast Box"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/uploads/2020/06/BreakfastBox-scaled.jpg"
+  alt: "Savory Breakfast Box"
+  priceCents: 4159
+  sortOrder: 920
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "savory-bacon-fougasse"
+  slug: "savory-bacon-fougasse"
+  name: "Bacon Fougasse"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/uploads/2020/05/BaconCheese-Fougasse-scaled.jpg"
+  alt: "Bacon Fougasse"
+  priceCents: 750
+  sortOrder: 930
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "savory-veggie-fougasse"
+  slug: "savory-veggie-fougasse"
+  name: "Veggie Fougasse"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/uploads/2020/06/Veggie-fougasse-scaled.jpg"
+  alt: "Veggie Fougasse"
+  priceCents: 750
+  sortOrder: 940
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "savory-olive-fougasse"
+  slug: "savory-olive-fougasse"
+  name: "Olive Fougasse"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/uploads/2020/06/Olive-Fougasse-scaled.jpg"
+  alt: "Olive Fougasse"
+  priceCents: 750
+  sortOrder: 950
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "savory-pepperoni-fougasse"
+  slug: "savory-pepperoni-fougasse"
+  name: "Pepperoni Fougasse"
+  category: "savory"
+  image: "https://labaguettedenormandy.com/wp-content/uploads/2020/06/Pepperoni-Fougasse-scaled.jpg"
+  alt: "Pepperoni Fougasse"
+  priceCents: 750
+  sortOrder: 960
+  sourceUrl: "https://labaguettedenormandy.com/savory/"
+  sourceType: "published-menu"
+
+- id: "tarts-pear-amandine-6p"
+  slug: "tarts-pear-amandine-6p"
+  name: "Pear amandine 6p"
+  category: "tarts"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/daily-choice/Amandine-pear-6p.jpg?i=1331093828"
+  alt: "Pear amandine 6p"
+  priceCents: 3259
+  sortOrder: 970
+  sourceUrl: "https://labaguettedenormandy.com/tarts/"
+  sourceType: "published-menu"
+
+- id: "tarts-lemon-tart-6p"
+  slug: "tarts-lemon-tart-6p"
+  name: "Lemon tart 6p"
+  category: "tarts"
+  image: "https://labaguettedenormandy.com/wp-content/uploads/2021/10/LemonTart-scaled.jpg"
+  alt: "Lemon tart 6p"
+  priceCents: 3259
+  sortOrder: 980
+  sourceUrl: "https://labaguettedenormandy.com/tarts/"
+  sourceType: "published-menu"
+
+- id: "tarts-creme-brulee-tart-6p"
+  slug: "tarts-creme-brulee-tart-6p"
+  name: "Crème Brûlée Tart 6P"
+  category: "tarts"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/tarts/cream-brulee-6p.JPG?i=1708512541"
+  alt: "Creme Brulée Tart 6p"
+  priceCents: 3259
+  sortOrder: 990
+  sourceUrl: "https://labaguettedenormandy.com/tarts/"
+  sourceType: "published-menu"
+
+- id: "tarts-strawberry-tart-6p"
+  slug: "tarts-strawberry-tart-6p"
+  name: "Strawberry Tart 6p"
+  category: "tarts"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/tarts/tarte-aux-fraises.jpg?i=1977304886"
+  alt: "Strawberry Tart 6p"
+  priceCents: 3259
+  sortOrder: 1000
+  sourceUrl: "https://labaguettedenormandy.com/tarts/"
+  sourceType: "published-menu"
+
+- id: "tarts-mixed-berry-tart-6p"
+  slug: "tarts-mixed-berry-tart-6p"
+  name: "Mixed Berry Tart 6P"
+  category: "tarts"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/tarts/tartmixedberry2016.png?i=909596201"
+  alt: "Mixberry Tart 6p"
+  priceCents: 3259
+  sortOrder: 1010
+  sourceUrl: "https://labaguettedenormandy.com/tarts/"
+  sourceType: "published-menu"
+
+- id: "tarts-apple-crumble-6p"
+  slug: "tarts-apple-crumble-6p"
+  name: "Apple Crumble 6p"
+  category: "tarts"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/tarts/tartapplecrumble2016.png?i=1300254739"
+  alt: "Apple Crumble 6p"
+  priceCents: 3259
+  sortOrder: 1020
+  sourceUrl: "https://labaguettedenormandy.com/tarts/"
+  sourceType: "published-menu"
+
+- id: "tarts-strawberry-amandine-tart-6p"
+  slug: "tarts-strawberry-amandine-tart-6p"
+  name: "Strawberry Amandine Tart 6P"
+  category: "tarts"
+  image: "https://labaguettedenormandy.com/wp-content/uploads/2021/10/Strawberry-Amandine-scaled.jpg"
+  alt: "Strawberry Amandine Tart 6P"
+  priceCents: 3259
+  sizeText: "6P"
+  sortOrder: 1030
+  sourceUrl: "https://labaguettedenormandy.com/tarts/"
+  sourceType: "published-menu"
+
+- id: "breakfast-lunch-breakfast-quiche"
+  slug: "breakfast-lunch-breakfast-quiche"
+  name: "Breakfast Quiche"
+  category: "breakfast-lunch"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/breakfast/Quiche-Breakfast.jpg?t=1585180916"
+  alt: "Breakfast Quiche"
+  sortOrder: 1040
+  sourceUrl: "https://labaguettedenormandy.com/breakfast/"
+  sourceType: "gallery-label"
+
+- id: "breakfast-lunch-omelette"
+  slug: "breakfast-lunch-omelette"
+  name: "Omelette"
+  category: "breakfast-lunch"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/breakfast/omelette.jpg?t=1585514348"
+  alt: "Omelette"
+  sortOrder: 1050
+  sourceUrl: "https://labaguettedenormandy.com/breakfast/"
+  sourceType: "gallery-label"
+
+- id: "breakfast-lunch-normandy-salad"
+  slug: "breakfast-lunch-normandy-salad"
+  name: "Normandy Salad"
+  category: "breakfast-lunch"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/breakfast/Normandy-Salade.jpg?t=1585514365"
+  alt: "Normandy Salad"
+  sortOrder: 1060
+  sourceUrl: "https://labaguettedenormandy.com/breakfast/"
+  sourceType: "gallery-label"
+
+- id: "breakfast-lunch-hot-omelette-sandwich"
+  slug: "breakfast-lunch-hot-omelette-sandwich"
+  name: "Hot Omelette Sandwich"
+  category: "breakfast-lunch"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/breakfast/Hot-sandwich-omelette.jpg?t=1585514401"
+  alt: "Hot Omelette Sandwich"
+  sortOrder: 1070
+  sourceUrl: "https://labaguettedenormandy.com/breakfast/"
+  sourceType: "gallery-label"
+
+- id: "breakfast-lunch-genova-panini"
+  slug: "breakfast-lunch-genova-panini"
+  name: "Genova Panini"
+  category: "breakfast-lunch"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/breakfast/Genova-Panini.JPG?t=1585514419"
+  alt: "Genova Panini"
+  sortOrder: 1080
+  sourceUrl: "https://labaguettedenormandy.com/breakfast/"
+  sourceType: "gallery-label"
+
+- id: "breakfast-lunch-french-toast-strawberries"
+  slug: "breakfast-lunch-french-toast-strawberries"
+  name: "French Toast with Strawberries"
+  category: "breakfast-lunch"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/breakfast/french-toast-strawberries.jpg?t=1585514437"
+  alt: "French Toast with Strawberries"
+  sortOrder: 1090
+  sourceUrl: "https://labaguettedenormandy.com/breakfast/"
+  sourceType: "gallery-label"
+
+- id: "breakfast-lunch-croque-madame"
+  slug: "breakfast-lunch-croque-madame"
+  name: "Croque Madame"
+  category: "breakfast-lunch"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/breakfast/croque-Madame.jpg?t=1585514509"
+  alt: "Croque Madame"
+  sortOrder: 1100
+  sourceUrl: "https://labaguettedenormandy.com/breakfast/"
+  sourceType: "gallery-label"
+
+- id: "breakfast-lunch-croque-campagnard-madame"
+  slug: "breakfast-lunch-croque-campagnard-madame"
+  name: "Croque Campagnard Madame"
+  category: "breakfast-lunch"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/breakfast/croque-campgnard-madame.jpg?t=1585514526"
+  alt: "Croque Campagnard Madame"
+  sortOrder: 1110
+  sourceUrl: "https://labaguettedenormandy.com/breakfast/"
+  sourceType: "gallery-label"
+
+- id: "breakfast-lunch-breakfast-coffee"
+  slug: "breakfast-lunch-breakfast-coffee"
+  name: "Breakfast Coffee"
+  category: "breakfast-lunch"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/breakfast/Breakfast-Coffee.jpg?t=1585514599"
+  alt: "Breakfast Coffee"
+  sortOrder: 1120
+  sourceUrl: "https://labaguettedenormandy.com/breakfast/"
+  sourceType: "gallery-label"
+
+- id: "breakfast-lunch-croissant-omelette"
+  slug: "breakfast-lunch-croissant-omelette"
+  name: "Croissant Omelette"
+  category: "breakfast-lunch"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/breakfast/croissantomelette2016.png?t=1585179804"
+  alt: "Croissant Omelette"
+  sortOrder: 1130
+  sourceUrl: "https://labaguettedenormandy.com/breakfast/"
+  sourceType: "gallery-label"
+
+- id: "breakfast-lunch-panini"
+  slug: "breakfast-lunch-panini"
+  name: "Panini"
+  category: "breakfast-lunch"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/lunch/panini.png?t=1585179537"
+  alt: "Panini"
+  sortOrder: 1140
+  sourceUrl: "https://labaguettedenormandy.com/breakfast/"
+  sourceType: "gallery-label"
+
+- id: "breakfast-lunch-ham-sandwich"
+  slug: "breakfast-lunch-ham-sandwich"
+  name: "Ham Sandwich"
+  category: "breakfast-lunch"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/lunch/hamsandwich.jpg?t=1585179536"
+  alt: "Ham Sandwich"
+  sortOrder: 1150
+  sourceUrl: "https://labaguettedenormandy.com/breakfast/"
+  sourceType: "gallery-label"
+
+- id: "crepes-crepe-with-egg"
+  slug: "crepes-crepe-with-egg"
+  name: "Crêpe with Egg"
+  category: "crepes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/crepes/crepeandegg1.png?t=1495227339"
+  alt: "Crêpe with Egg"
+  sortOrder: 1160
+  sourceUrl: "https://labaguettedenormandy.com/crepes/"
+  sourceType: "gallery-label"
+
+- id: "crepes-banana-split-crepe"
+  slug: "crepes-banana-split-crepe"
+  name: "Banana Split Crêpe"
+  category: "crepes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/crepes/banana-split-crepe.jpg?t=1581032233"
+  alt: "Banana Split Crêpe"
+  sortOrder: 1170
+  sourceUrl: "https://labaguettedenormandy.com/crepes/"
+  sourceType: "gallery-label"
+
+- id: "crepes-breakfast-crepe"
+  slug: "crepes-breakfast-crepe"
+  name: "Breakfast Crêpe"
+  category: "crepes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/crepes/Breakfast-crepe.jpg?t=1581032212"
+  alt: "Breakfast Crêpe"
+  sortOrder: 1180
+  sourceUrl: "https://labaguettedenormandy.com/crepes/"
+  sourceType: "gallery-label"
+
+- id: "crepes-crepe-maison"
+  slug: "crepes-crepe-maison"
+  name: "Crêpe Maison"
+  category: "crepes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/crepes/crepe-maison.jpg?t=1581032191"
+  alt: "Crêpe Maison"
+  sortOrder: 1190
+  sourceUrl: "https://labaguettedenormandy.com/crepes/"
+  sourceType: "gallery-label"
+
+- id: "crepes-du-bocage"
+  slug: "crepes-du-bocage"
+  name: "Du Bocage"
+  category: "crepes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/crepes/Du-Bocage.jpg?t=1581032170"
+  alt: "Du Bocage"
+  sortOrder: 1200
+  sourceUrl: "https://labaguettedenormandy.com/crepes/"
+  sourceType: "gallery-label"
+
+- id: "crepes-du-pecheur"
+  slug: "crepes-du-pecheur"
+  name: "Du Pêcheur"
+  category: "crepes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/crepes/Du-Pecheur.jpg?t=1581032150"
+  alt: "Du Pêcheur"
+  sortOrder: 1210
+  sourceUrl: "https://labaguettedenormandy.com/crepes/"
+  sourceType: "gallery-label"
+
+- id: "crepes-lemon-crepe"
+  slug: "crepes-lemon-crepe"
+  name: "Lemon Crêpe"
+  category: "crepes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/crepes/lemon-crepe.jpg?t=1581032130"
+  alt: "Lemon Crêpe"
+  sortOrder: 1220
+  sourceUrl: "https://labaguettedenormandy.com/crepes/"
+  sourceType: "gallery-label"
+
+- id: "crepes-strawberry-crepe"
+  slug: "crepes-strawberry-crepe"
+  name: "Strawberry Crêpe"
+  category: "crepes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/crepes/strawberry-crepe-1.jpg?t=1572046249"
+  alt: "Strawberry Crêpe"
+  sortOrder: 1230
+  sourceUrl: "https://labaguettedenormandy.com/crepes/"
+  sourceType: "gallery-label"
+
+- id: "crepes-strawberry-banana-crepe"
+  slug: "crepes-strawberry-banana-crepe"
+  name: "Strawberry Banana Crêpe"
+  category: "crepes"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/crepes/strawberrybananacrepe2016.png?t=1590452678"
+  alt: "Strawberry Banana Crêpe"
+  sortOrder: 1240
+  sourceUrl: "https://labaguettedenormandy.com/crepes/"
+  sourceType: "gallery-label"
+
+- id: "petits-fours-sweet-petits-fours"
+  slug: "petits-fours-sweet-petits-fours"
+  name: "Sweet Petits Fours"
+  category: "petits-fours"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/petitsfours/sweet-petit-four-1.JPG?t=1550622597"
+  alt: "Sweet Petits Fours"
+  sortOrder: 1250
+  sourceUrl: "https://labaguettedenormandy.com/petits-fours/"
+  sourceType: "gallery-label"
+
+- id: "petits-fours-savory-petits-fours"
+  slug: "petits-fours-savory-petits-fours"
+  name: "Savory Petits Fours"
+  category: "petits-fours"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/petitsfours/savory-petit-four.JPG?t=1550622598"
+  alt: "Savory Petits Fours"
+  sortOrder: 1260
+  sourceUrl: "https://labaguettedenormandy.com/petits-fours/"
+  sourceType: "gallery-label"
+
+- id: "graduation-fraisier-graduation"
+  slug: "graduation-fraisier-graduation"
+  name: "Fraisier Graduation Cake"
+  category: "graduation"
+  sortOrder: 1270
+  sourceUrl: "https://labaguettedenormandy.com/graduation/"
+  sourceType: "gallery-label"
+
+- id: "graduation-three-chocolate-graduation"
+  slug: "graduation-three-chocolate-graduation"
+  name: "Three Chocolate Graduation Cake"
+  category: "graduation"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/graduation/Three-Chocolate.JPG?t=1557624116"
+  alt: "Three Chocolate Graduation Cake"
+  sortOrder: 1280
+  sourceUrl: "https://labaguettedenormandy.com/graduation/"
+  sourceType: "gallery-label"
+
+- id: "graduation-forestier-graduation"
+  slug: "graduation-forestier-graduation"
+  name: "Forestier Graduation Cake"
+  category: "graduation"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/graduation/Forestier.jpg?t=1557624116"
+  alt: "Forestier Graduation Cake"
+  sortOrder: 1290
+  sourceUrl: "https://labaguettedenormandy.com/graduation/"
+  sourceType: "gallery-label"
+
+- id: "graduation-chocolate-moka-graduation"
+  slug: "graduation-chocolate-moka-graduation"
+  name: "Chocolate Moka Graduation Cake"
+  category: "graduation"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/graduation/Raspberry-delight.JPG?t=1557624116"
+  alt: "Chocolate Moka Graduation Cake"
+  sortOrder: 1300
+  sourceUrl: "https://labaguettedenormandy.com/graduation/"
+  sourceType: "gallery-label"
+
+- id: "graduation-saint-domingue-graduation"
+  slug: "graduation-saint-domingue-graduation"
+  name: "Saint Domingue Graduation Cake"
+  category: "graduation"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/graduation/Saint-Domingue.JPG?t=1557624117"
+  alt: "Saint Domingue Graduation Cake"
+  sortOrder: 1310
+  sourceUrl: "https://labaguettedenormandy.com/graduation/"
+  sourceType: "gallery-label"
+
+- id: "graduation-framboisier-graduation"
+  slug: "graduation-framboisier-graduation"
+  name: "Framboisier Graduation Cake"
+  category: "graduation"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/graduation/Framboisier.jpg?t=1557624122"
+  alt: "Framboisier Graduation Cake"
+  sortOrder: 1320
+  sourceUrl: "https://labaguettedenormandy.com/graduation/"
+  sourceType: "gallery-label"
+
+- id: "graduation-raspberry-delight-graduation"
+  slug: "graduation-raspberry-delight-graduation"
+  name: "Raspberry Delight Graduation Cake"
+  category: "graduation"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/graduation/Rapsberry-delight.jpg?t=1557624117"
+  alt: "Raspberry Delight Graduation Cake"
+  sortOrder: 1330
+  sourceUrl: "https://labaguettedenormandy.com/graduation/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-mixed-berry-buche-6p"
+  slug: "seasonal-mixed-berry-buche-6p"
+  name: "Mixed Berry Bûche 6P"
+  category: "seasonal"
+  description: "White chocolate cover"
+  sortOrder: 1340
+  sourceUrl: "https://labaguettedenormandy.com/buche-de-noel/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-three-chocolate-buche-6p"
+  slug: "seasonal-three-chocolate-buche-6p"
+  name: "Three Chocolate Bûche 6P"
+  category: "seasonal"
+  sortOrder: 1350
+  sourceUrl: "https://labaguettedenormandy.com/buche-de-noel/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-traditional-chocolate-buche-6p"
+  slug: "seasonal-traditional-chocolate-buche-6p"
+  name: "Traditional Chocolate Bûche 6P"
+  category: "seasonal"
+  sortOrder: 1360
+  sourceUrl: "https://labaguettedenormandy.com/buche-de-noel/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-traditional-praline-buche-6p"
+  slug: "seasonal-traditional-praline-buche-6p"
+  name: "Traditional Praliné Bûche 6P"
+  category: "seasonal"
+  sortOrder: 1370
+  sourceUrl: "https://labaguettedenormandy.com/buche-de-noel/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-traditional-grand-marnier-buche-6p"
+  slug: "seasonal-traditional-grand-marnier-buche-6p"
+  name: "Traditional Grand Marnier Bûche 6P"
+  category: "seasonal"
+  sortOrder: 1380
+  sourceUrl: "https://labaguettedenormandy.com/buche-de-noel/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-traditional-duo-buche-6p"
+  slug: "seasonal-traditional-duo-buche-6p"
+  name: "Traditional Duo Bûche 6P"
+  category: "seasonal"
+  sortOrder: 1390
+  sourceUrl: "https://labaguettedenormandy.com/buche-de-noel/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-exotic-buche"
+  slug: "seasonal-exotic-buche"
+  name: "Exotic Bûche de Noël"
+  category: "seasonal"
+  sortOrder: 1400
+  sourceUrl: "https://labaguettedenormandy.com/buche-de-noel/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-belle-helene-buche"
+  slug: "seasonal-belle-helene-buche"
+  name: "Belle Hélène Bûche de Noël"
+  category: "seasonal"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/buches/100-0032_IMG.JPG?t=1732504333"
+  alt: "Belle Hélène Bûche de Noël"
+  sortOrder: 1410
+  sourceUrl: "https://labaguettedenormandy.com/buche-de-noel/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-bois-normand-buche"
+  slug: "seasonal-bois-normand-buche"
+  name: "Bois Normand Bûche"
+  category: "seasonal"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/buches/Bois-Normand.jpg?t=1732504333"
+  alt: "Bois Normand Bûche"
+  sortOrder: 1420
+  sourceUrl: "https://labaguettedenormandy.com/buche-de-noel/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-rocky-mountain-buche"
+  slug: "seasonal-rocky-mountain-buche"
+  name: "Rocky Mountain Bûche"
+  category: "seasonal"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/buches/Rocky-Mountain.jpg?t=1732504333"
+  alt: "Rocky Mountain Bûche"
+  sortOrder: 1430
+  sourceUrl: "https://labaguettedenormandy.com/buche-de-noel/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-vanilla-buche"
+  slug: "seasonal-vanilla-buche"
+  name: "Vanilla Bûche de Noël"
+  category: "seasonal"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/buches/Vanilla-buche.jpg?t=1732504333"
+  alt: "Vanilla Bûche de Noël"
+  sortOrder: 1440
+  sourceUrl: "https://labaguettedenormandy.com/buche-de-noel/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-white-strawberry-buche"
+  slug: "seasonal-white-strawberry-buche"
+  name: "White Strawberry Bûche"
+  category: "seasonal"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/buches/White-Strawberry-Buche.jpg?t=1732504333"
+  alt: "White Strawberry Bûche"
+  sortOrder: 1450
+  sourceUrl: "https://labaguettedenormandy.com/buche-de-noel/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-buchettes-de-noel"
+  slug: "seasonal-buchettes-de-noel"
+  name: "Bûchettes de Noël"
+  category: "seasonal"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/buchette-de-noel/buchettes2.png?t=1545362064"
+  alt: "Bûchettes de Noël"
+  sortOrder: 1460
+  sourceUrl: "https://labaguettedenormandy.com/christmas-goodies/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-christmas-cookies"
+  slug: "seasonal-christmas-cookies"
+  name: "Christmas Cookies"
+  category: "seasonal"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/cookies/cookies6.png?t=1607294726"
+  alt: "Christmas Cookies"
+  sortOrder: 1470
+  sourceUrl: "https://labaguettedenormandy.com/christmas-goodies/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-mini-christmas-cookies"
+  slug: "seasonal-mini-christmas-cookies"
+  name: "Mini Christmas Cookies"
+  category: "seasonal"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/cookies/christmascookies11.png?t=1607294726"
+  alt: "Mini Christmas Cookies"
+  sortOrder: 1480
+  sourceUrl: "https://labaguettedenormandy.com/christmas-goodies/"
+  sourceType: "gallery-label"
+
+- id: "seasonal-snowman-cookie"
+  slug: "seasonal-snowman-cookie"
+  name: "Snowman Cookie"
+  category: "seasonal"
+  image: "https://labaguettedenormandy.com/wp-content/gallery/cookies/Snowman-cookie.JPG?t=1607294726"
+  alt: "Snowman Cookie"
+  sortOrder: 1490
+  sourceUrl: "https://labaguettedenormandy.com/christmas-goodies/"
+  sourceType: "gallery-label"

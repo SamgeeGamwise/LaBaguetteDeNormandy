@@ -1,26 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageIntro from "../components/PageIntro.astro";
 ---
 
 <BaseLayout
   title="French Crepes in Parker, Colorado | La Baguette de Normandy"
   description="Browse sweet and savory French crepes served at La Baguette de Normandy in Parker, Colorado."
 >
-  <header>
-    <h1>French Crepes</h1>
-
-    <p>
-      Explore sweet and savory French crepes served at our bakery in Parker,
-      Colorado.
-    </p>
-  </header>
+  <PageIntro title="French Crepes" description="Explore sweet and savory French crepes served at our bakery in Parker, Colorado." />
 
   <section>
     <h2>More from the Bakery</h2>
 
     <p>
-      View our <a href="/breakfast/">breakfast menu</a>,
-      <a href="/savory/">savory selections</a>, or
+      View our{" "}<a href="/breakfast/">breakfast menu</a>,{" "}
+      <a href="/savory/">savory selections</a>, or our{" "}
       <a href="/location/">location and hours</a>.
     </p>
   </section>

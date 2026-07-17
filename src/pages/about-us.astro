@@ -1,26 +1,67 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ButtonLink from "../components/ButtonLink.astro";
+import PageIntro from "../components/PageIntro.astro";
+import SectionHeading from "../components/SectionHeading.astro";
 ---
 
 <BaseLayout
   title="About Our French Bakery in Parker, CO | La Baguette de Normandy"
-  description="Learn about La Baguette de Normandy and its approach to French breads, pastries, cakes, and bakery traditions in Parker, Colorado."
+  description="Meet Chef Michael Dupont and learn about the traditional French breads, pastries, cakes, breakfast, and lunch served at La Baguette de Normandy in Parker, Colorado."
 >
-  <header>
-    <h1>About La Baguette de Normandy</h1>
+  <PageIntro
+    eyebrow="About us"
+    title="About La Baguette de Normandy"
+    description="La Baguette de Normandy is a French bakery and café in Parker, south of Denver, led by Chef Michael Dupont."
+  />
 
-    <p>
-      Learn about our Parker bakery, our French baking traditions, and the
-      approach behind our breads, pastries, cakes, and prepared foods.
-    </p>
-  </header>
+  <section class="section-surface">
+    <SectionHeading title="French artisan tradition in Parker">
+      <p>
+        Chef Dupont has been a certified master baker, chef, and chocolatier
+        for 25 years. At the bakery, guests can experience French breads and
+        pastries prepared in accordance with the traditions of the French artisan.
+      </p>
+    </SectionHeading>
+
+    <div class="feature-grid">
+      <article class="feature-card">
+        <h3>Breads and pastries</h3>
+        <p>
+          The daily selection includes pastries, baguettes, loaves, buttery
+          croissants, cookies, macarons, and handmade chocolates.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Breakfast and lunch</h3>
+        <p>
+          Savory breakfast and lunch choices include quiche, croissants,
+          sandwiches, and other café favorites.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Cakes and special events</h3>
+        <p>
+          Large party-sized and custom cakes are available for birthdays and
+          other special events.
+        </p>
+      </article>
+    </div>
+  </section>
 
   <section>
-    <h2>Visit or Explore the Menu</h2>
+    <SectionHeading title="A little slice of France in Colorado">
+      <p>
+        Stop in for coffee and a treat, enjoy breakfast or lunch in the café,
+        or pick up a baguette to take home. We hope to see you soon at the bakery.
+      </p>
+    </SectionHeading>
 
-    <p>
-      Browse the <a href="/menu/">bakery menu</a> or view our
-      <a href="/location/">location and hours</a>.
-    </p>
+    <div class="hero-actions">
+      <ButtonLink href="/menu/">Browse the menu</ButtonLink>
+      <ButtonLink href="/location/">Location and hours</ButtonLink>
+    </div>
   </section>
 </BaseLayout>

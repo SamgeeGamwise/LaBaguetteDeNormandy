@@ -1,0 +1,44 @@
+---
+import { business } from "../data/business";
+import ButtonLink from "./ButtonLink.astro";
+import SectionHeading from "./SectionHeading.astro";
+
+interface Props {
+  title?: string;
+  eyebrow?: string;
+}
+
+const {
+  title = "Visit La Baguette de Normandy",
+  eyebrow,
+} = Astro.props;
+---
+
+<section class="visit-section">
+  <SectionHeading title={title} eyebrow={eyebrow} />
+
+  <div class="visit-grid">
+    <div class="feature-card">
+      <h3>Location</h3>
+      <address>
+        {business.address.map((line) => <>{line}<br /></>)}
+      </address>
+      <p>
+        <a href={business.directionsUrl} target="_blank" rel="noopener noreferrer">
+          Get directions
+        </a>
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Hours</h3>
+      {business.hours.map((hours) => <p>{hours}</p>)}
+    </div>
+
+    <div class="feature-card">
+      <h3>Contact</h3>
+      <p><a href={business.phoneHref}>{business.phoneDisplay}</a></p>
+      <ButtonLink href="/contact-us/">Contact information</ButtonLink>
+    </div>
+  </div>
+</section>
