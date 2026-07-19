@@ -1,37 +1,286 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import CategoryLinks from "../components/CategoryLinks.astro";
+import ButtonLink from "../components/ButtonLink.astro";
 import PageIntro from "../components/PageIntro.astro";
-import ProductListing from "../components/ProductListing.astro";
-import { menuProductSections } from "../data/productCategories";
+import { business } from "../data/business";
+
+const menuSections = [
+  {
+    title: "Viennoiseries",
+    href: "/viennoiseries/",
+    description: "Buttery, layered French favorites for breakfast, an afternoon treat, or a box to share.",
+    image: "/images/products/viennoiseries/mini-viennoiseries-assortment.png",
+    alt: "An assortment of small French viennoiseries",
+  },
+  {
+    title: "Breads",
+    href: "/breads/",
+    description: "Traditional baguettes, artisan loaves, and breads made for the table or the journey home.",
+    image: "/images/products/breads/traditional-baguette.jpg",
+    alt: "An assortment of freshly baked baguettes",
+  },
+  {
+    title: "Pastries",
+    href: "/pastry/",
+    description: "Individual French pastries, from rich chocolate creations to bright fruit-filled favorites.",
+    image: "/images/products/pastries/raspberry-puff-pastry.jpg",
+    alt: "Golden raspberry puff pastries",
+  },
+  {
+    title: "Cakes",
+    href: "/cakes/",
+    description: "French cakes for an everyday indulgence, a birthday, or a celebration made to feel special.",
+    image: "/images/products/cakes/decorated-chocolate-cake.jpg",
+    alt: "A decorated chocolate celebration cake",
+  },
+  {
+    title: "Tarts",
+    href: "/tarts/",
+    description: "Classic fruit and almond tarts with crisp pastry, elegant finishes, and plenty to share.",
+    image: "/images/products/tarts/pear-amandine-6p.jpg",
+    alt: "A pear almond tart",
+  },
+  {
+    title: "Breakfast",
+    href: "/breakfast/",
+    description: "Warm café breakfasts, croissant sandwiches, and other satisfying ways to begin the day.",
+    image: "/images/products/breakfast/omelette-croissant-breakfast.jpg",
+    alt: "A breakfast croissant served with an omelette",
+  },
+  {
+    title: "Savory",
+    href: "/savory/",
+    description: "Quiche, sandwiches, and savory bakery favorites for lunch or an easy meal to take away.",
+    image: "/images/products/savory/fougasse-sandwiches.jpg",
+    alt: "Freshly prepared savory fougasse sandwiches",
+  },
+  {
+    title: "Crepes",
+    href: "/crepes/",
+    description: "Sweet and savory French crepes, prepared as a café meal or a simple dessert.",
+    image: "/images/products/crepes/strawberry-crepe-1.jpg",
+    alt: "A crepe served with fresh strawberries",
+  },
+  {
+    title: "Petits Fours",
+    href: "/petits-fours/",
+    description: "Small, polished bites made for dessert tables, gatherings, and a little taste of everything.",
+    image: "/images/products/petits-fours/petits-fours1.jpg",
+    alt: "An assortment of petits fours",
+  },
+  {
+    title: "Graduation",
+    href: "/graduation/",
+    description: "Celebration cakes and bakery ideas for marking the graduate's big day with family and friends.",
+    image: "/images/products/graduation/forestier-graduation-cake.jpg",
+    alt: "A decorated graduation cake",
+  },
+] as const;
 ---
 
 <BaseLayout
   title="French Bakery Menu | La Baguette de Normandy"
-  description="Browse breads, pastries, cakes, tarts, crepes, breakfast, savory items, and seasonal specialties from our French bakery in Parker."
+  description="Explore breads, pastries, cakes, tarts, crepes, breakfast, savory items, and celebration specialties from our French bakery in Parker."
+  pageClass="menu-page"
 >
   <PageIntro
-    title="French Bakery Menu"
-    description="Browse the bakery's main menu categories, from traditional breads and viennoiseries to cakes, breakfast, savory dishes, and seasonal favorites."
+    eyebrow="Made in Parker with French tradition"
+    title="Find something for every part of the day."
+    description="Start with a category, then explore the bakery's full selection. Offerings change, so call ahead if you have something particular in mind."
   />
 
-  <CategoryLinks />
+  <section class="menu-sections" aria-labelledby="menu-sections-title">
+    <div class="menu-sections__heading">
+      <h2 id="menu-sections-title">Explore the bakery</h2>
+      <p>From a morning croissant to a cake for the whole table.</p>
+    </div>
 
-  <section class="menu-catalog-intro" aria-labelledby="menu-catalog-title">
-    <h2 id="menu-catalog-title">Browse the Menu</h2>
-    <p>
-      Selection, availability, and prices may change. Please contact the bakery
-      to confirm current offerings and special orders.
-    </p>
+    <div class="menu-sections__grid">
+      {menuSections.map((section) => (
+        <a class="menu-section" href={section.href} data-reveal>
+          <span class="menu-section__image">
+            <img
+              src={section.image}
+              alt={section.alt}
+              width="640"
+              height="480"
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
+          <span class="menu-section__content">
+            <span class="menu-section__title">{section.title}</span>
+            <span class="menu-section__description">{section.description}</span>
+            <span class="menu-section__link">Explore {section.title} <span aria-hidden="true">→</span></span>
+          </span>
+        </a>
+      ))}
+    </div>
   </section>
 
-  {menuProductSections.map(({ category, label }) => (
-    <ProductListing category={category} title={label} showNotice={false} />
-  ))}
+  <section class="menu-note" aria-labelledby="menu-note-title">
+    <div>
+      <p class="eyebrow">Looking for something specific?</p>
+      <h2 id="menu-note-title">The bakery case changes with the day.</h2>
+      <p>
+        Selection, availability, and prices may change. Call before 1:00 PM for
+        bakery orders or order available café favorites online.
+      </p>
+    </div>
+    <div class="menu-note__actions">
+      <ButtonLink href={business.phoneHref}>Call the bakery</ButtonLink>
+      <ButtonLink href={business.orderUrl} external class="button--quiet">Order online</ButtonLink>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
-  .menu-catalog-intro {
-    max-width: 48rem;
+  .menu-sections__heading {
+    max-width: 42rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .menu-sections__heading h2 {
+    margin-bottom: 0.4rem;
+  }
+
+  .menu-sections__grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .menu-section {
+    display: grid;
+    grid-template-columns: minmax(7.5rem, 38%) minmax(0, 1fr);
+    min-height: 11rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    overflow: hidden;
+  }
+
+  .menu-section__image,
+  .menu-section__image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu-section__image img {
+    object-fit: cover;
+  }
+
+  .menu-section__content {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+  }
+
+  .menu-section__title {
+    color: var(--color-primary-dark);
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .menu-section__description {
+    margin-top: 0.55rem;
+    color: var(--color-muted);
+    font-weight: 400;
+    line-height: 1.45;
+  }
+
+  .menu-section__link {
+    margin-top: auto;
+    padding-top: 0.9rem;
+    color: var(--color-blue-800);
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .menu-section:hover .menu-section__link {
+    color: var(--color-accent-dark);
+  }
+
+  .menu-note {
+    display: grid;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--color-surface-warm);
+  }
+
+  .menu-note > div:first-child {
+    max-width: 42rem;
+  }
+
+  .menu-note .eyebrow {
+    margin-bottom: 0.5rem;
+  }
+
+  .menu-note h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .menu-note__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .menu-note :global(.button--quiet) {
+    border-color: var(--color-primary);
+    background: transparent;
+    color: var(--color-primary-dark);
+  }
+
+  @media (max-width: 480px) {
+    .menu-section {
+      grid-template-columns: 1fr;
+    }
+
+    .menu-section__image {
+      aspect-ratio: 16 / 9;
+    }
+
+    .menu-section__link {
+      margin-top: 0.25rem;
+    }
+
+    .menu-note {
+      padding: 1.5rem 1.25rem;
+    }
+
+    .menu-note__actions,
+    .menu-note :global(.button) {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 760px) {
+    .menu-sections__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .menu-section {
+      grid-template-columns: 1fr;
+    }
+
+    .menu-section__image {
+      aspect-ratio: 16 / 9;
+    }
+
+    .menu-section__content {
+      min-height: 13.5rem;
+      padding: 1.5rem;
+    }
+
+    .menu-note {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      padding: 2.5rem;
+    }
   }
 </style>

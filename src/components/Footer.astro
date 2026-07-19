@@ -35,15 +35,16 @@ const year = new Date().getFullYear();
       </div>
 
       <section>
-        <h2 class="utility-heading"><UtilityIcon icon="location" size="medium" /> Visit</h2>
-        <address>
-          {business.address.map((line) => (
-            <>
-              {line}<br />
-            </>
-          ))}
-        </address>
-        <p><a class="utility-link" href="/location/"><UtilityIcon icon="location" /><span>Location and directions</span></a></p>
+        <h2>Visit</h2>
+        <div class="site-footer__address">
+          <UtilityIcon icon="location" />
+          <address>
+            {business.address.map((line) => (
+              <span>{line}</span>
+            ))}
+          </address>
+        </div>
+        <a class="site-footer__text-link" href="/location/">Location and directions</a>
         <div class="site-footer__hours">
           <UtilityIcon icon="hours" />
           <div>
@@ -54,12 +55,12 @@ const year = new Date().getFullYear();
         </div>
       </section>
 
-      <nav aria-label="Menu links">
+      <nav class="site-footer__nav" aria-label="Menu links">
         <h2>Menu</h2>
         <NavigationList items={menuNavigation} />
       </nav>
 
-      <nav aria-label="Information links">
+      <nav class="site-footer__nav" aria-label="Information links">
         <h2>Information</h2>
         <NavigationList items={informationNavigation} />
       </nav>

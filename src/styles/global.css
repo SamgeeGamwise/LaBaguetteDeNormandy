@@ -158,6 +158,7 @@ address {
 .utility-link,
 .utility-heading,
 .contact-detail,
+.site-footer__address,
 .site-footer__hours {
   display: flex;
   align-items: flex-start;
@@ -177,6 +178,7 @@ address {
 
 .utility-link .utility-icon,
 .contact-detail .utility-icon,
+.site-footer__address > .utility-icon,
 .site-footer__hours > .utility-icon {
   margin-top: 0.25em;
 }
@@ -388,9 +390,29 @@ address {
 }
 
 .site-footer p + p,
-.site-footer address + p,
+.site-footer__text-link,
 .site-footer__hours {
   margin-top: 0.75rem;
+}
+
+.site-footer__address address,
+.site-footer__hours > div {
+  min-width: 0;
+}
+
+.site-footer__address address span {
+  display: block;
+}
+
+.site-footer__text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--color-orange-100);
+  text-decoration: underline;
+  text-decoration-color: rgb(255 229 207 / 65%);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.28em;
 }
 
 .site-footer ul {
@@ -401,6 +423,13 @@ address {
 
 .site-footer li + li {
   margin-top: 0.35rem;
+}
+
+.site-footer__nav a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-orange-100);
+  font-weight: 700;
 }
 
 .site-footer__legal {
@@ -802,6 +831,14 @@ address {
     display: flex;
     align-items: center;
     min-height: 3.5rem;
+  }
+
+  .site-footer__grid {
+    gap: 2.5rem;
+  }
+
+  .site-footer__nav a {
+    min-height: 2.75rem;
   }
 
 }

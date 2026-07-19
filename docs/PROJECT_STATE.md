@@ -161,6 +161,9 @@ domain.
 - Shared base and catalog layouts reduce repeated route markup. Reusable components cover the site head, brand logo, header menu, footer, product cards and grids, filtered product listings, page introductions, section headings, calls to action, navigation lists, category links, and visit information.
 - The shared header uses a desktop left rail and a tablet/mobile disclosure
   menu; the footer uses responsive four-, two-, and one-column layouts.
+- Footer navigation uses subtle accent-colored, bold links with comfortable
+  mobile tap targets. The directions link remains underlined, and the address
+  and store hours share the same indented icon-and-content alignment.
 - The homepage uses a varied editorial sequence instead of alternating
   image-and-text rows: a full photographic storefront opening with a solid
   floating message card, a concise manifesto, an asymmetric café-photo collage,
@@ -196,7 +199,7 @@ domain.
 - Business phone, order email, address, hours, directions, and ordering guidance are centralized in `src/data/business.ts`; navigation data remains in `src/data/navigation.ts`. The full contact set is shown on the contact page, with email also surfaced in shared visit and footer content.
 - Page-specific copy remains in each route so content can be edited without tracing it through a generalized content abstraction.
 - The typed product collection contains 149 offerings pulled from the live legacy site on 2026-07-17: 103 published menu entries with prices and 46 additional named offerings identified only through gallery labels.
-- Product listings are rendered from that collection on the main `/menu/` landing page, the ten core menu/category routes, and the two holiday routes. The main menu groups products by category beneath its category jump links. Cards use consistent responsive columns, a fixed 4:3 image area with center-cropped cover images, a standardized product-name area, and bottom-aligned price/size details; missing fields retain their layout space without displaying invented content.
+- Product listings are rendered from that collection on the ten core menu/category routes and the two holiday routes. The main `/menu/` page is intentionally a concise, image-led category directory with short introductions; visitors follow a category to see its detailed product listing. Product cards use consistent responsive columns, a fixed 4:3 image area with center-cropped cover images, a standardized product-name area, and bottom-aligned price/size details; missing fields retain their layout space without displaying invented content.
 - Product cards load dedicated 640×480 WebP derivatives instead of the much
   larger archival product files. A repeatable Sharp-based prebuild task creates
   those derivatives from the referenced catalog images, preserving the original
