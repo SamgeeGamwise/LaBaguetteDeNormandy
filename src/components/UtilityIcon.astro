@@ -1,0 +1,79 @@
+---
+import { icon as renderIcon } from "@fortawesome/fontawesome-svg-core";
+import {
+  faArrowUpRightFromSquare,
+  faBagShopping,
+  faClock,
+  faEnvelope,
+  faLocationDot,
+  faPhone,
+  faStore,
+} from "@fortawesome/free-solid-svg-icons";
+
+export type UtilityIconName =
+  | "external"
+  | "orders"
+  | "hours"
+  | "email"
+  | "location"
+  | "phone"
+  | "store";
+
+interface Props {
+  icon: UtilityIconName;
+  size?: "small" | "medium";
+  class?: string;
+}
+
+const icons = {
+  external: faArrowUpRightFromSquare,
+  orders: faBagShopping,
+  hours: faClock,
+  email: faEnvelope,
+  location: faLocationDot,
+  phone: faPhone,
+  store: faStore,
+};
+
+const { icon, size = "small", class: className } = Astro.props;
+const svg = renderIcon(icons[icon], {
+  attributes: {
+    "aria-hidden": "true",
+    focusable: "false",
+  },
+}).html.join("");
+---
+
+<span
+  class:list={["utility-icon", `utility-icon--${size}`, className]}
+  set:html={svg}
+></span>
+
+<style>
+  .utility-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 1.25em;
+    height: 1em;
+    color: currentColor;
+    line-height: 1;
+  }
+
+  .utility-icon--small {
+    font-size: 0.95em;
+  }
+
+  .utility-icon--medium {
+    font-size: 1.1em;
+  }
+
+  .utility-icon :global(svg) {
+    display: block;
+    width: auto;
+    max-width: 1em;
+    height: 1em;
+    fill: currentColor;
+  }
+</style>

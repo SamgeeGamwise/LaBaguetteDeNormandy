@@ -2,6 +2,7 @@
 import { business } from "../data/business";
 import ButtonLink from "./ButtonLink.astro";
 import SectionHeading from "./SectionHeading.astro";
+import UtilityIcon from "./UtilityIcon.astro";
 
 interface Props {
   title?: string;
@@ -19,26 +20,27 @@ const {
 
   <div class="visit-grid">
     <div class="feature-card">
-      <h3>Location</h3>
+      <h3 class="utility-heading"><UtilityIcon icon="location" size="medium" /> Location</h3>
       <address>
         {business.address.map((line) => <>{line}<br /></>)}
       </address>
       <p>
-        <a href={business.directionsUrl} target="_blank" rel="noopener noreferrer">
-          Get directions
+        <a class="utility-link" href={business.directionsUrl} target="_blank" rel="noopener noreferrer">
+          <UtilityIcon icon="location" />
+          <span>Get directions</span>
         </a>
       </p>
     </div>
 
     <div class="feature-card">
-      <h3>Hours</h3>
+      <h3 class="utility-heading"><UtilityIcon icon="hours" size="medium" /> Hours</h3>
       {business.hours.map((hours) => <p>{hours}</p>)}
     </div>
 
     <div class="feature-card">
-      <h3>Contact</h3>
-      <p><a href={business.phoneHref}>{business.phoneDisplay}</a></p>
-      <p><a href={business.emailHref}>{business.emailDisplay}</a></p>
+      <h3 class="utility-heading"><UtilityIcon icon="email" size="medium" /> Contact</h3>
+      <p><a class="utility-link" href={business.phoneHref}><UtilityIcon icon="phone" /><span>{business.phoneDisplay}</span></a></p>
+      <p><a class="utility-link" href={business.emailHref}><UtilityIcon icon="email" /><span>{business.emailDisplay}</span></a></p>
       <ButtonLink href="/contact-us/">Contact information</ButtonLink>
     </div>
   </div>

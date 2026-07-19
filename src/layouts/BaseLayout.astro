@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import ScrollReveal from "../components/ScrollReveal.astro";
 import SiteHead from "../components/SiteHead.astro";
 import "../styles/global.css";
 
@@ -8,19 +9,21 @@ interface Props {
   title: string;
   description: string;
   pageClass?: string;
+  noindex?: boolean;
 }
 
-const { title, description, pageClass } = Astro.props;
+const { title, description, pageClass, noindex = false } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <SiteHead title={title} description={description} />
+  <SiteHead title={title} description={description} noindex={noindex} />
   <body>
     <Header />
     <main class:list={["page-container", pageClass]}>
       <slot />
     </main>
     <Footer />
+    <ScrollReveal />
   </body>
 </html>

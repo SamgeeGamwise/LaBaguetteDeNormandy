@@ -3,6 +3,7 @@ import { business } from "../data/business";
 import { informationNavigation, menuNavigation } from "../data/navigation";
 import BrandLogo from "./BrandLogo.astro";
 import NavigationList from "./NavigationList.astro";
+import UtilityIcon from "./UtilityIcon.astro";
 
 const year = new Date().getFullYear();
 ---
@@ -13,17 +14,28 @@ const year = new Date().getFullYear();
       <div>
         <BrandLogo class="site-footer__logo" />
         <p>French bakery, patisserie, and café in Parker, Colorado.</p>
-        <p><a href={business.phoneHref}>Call {business.phoneDisplay}</a></p>
-        <p><a href={business.emailHref}>{business.emailDisplay}</a></p>
         <p>
-          <a href={business.orderUrl} target="_blank" rel="noopener noreferrer">
-            Order online
+          <a class="utility-link" href={business.phoneHref}>
+            <UtilityIcon icon="phone" />
+            <span>Call {business.phoneDisplay}</span>
+          </a>
+        </p>
+        <p>
+          <a class="utility-link" href={business.emailHref}>
+            <UtilityIcon icon="email" />
+            <span>{business.emailDisplay}</span>
+          </a>
+        </p>
+        <p>
+          <a class="utility-link" href={business.orderUrl} target="_blank" rel="noopener noreferrer">
+            <UtilityIcon icon="external" />
+            <span>Order online</span>
           </a>
         </p>
       </div>
 
       <section>
-        <h2>Visit</h2>
+        <h2 class="utility-heading"><UtilityIcon icon="location" size="medium" /> Visit</h2>
         <address>
           {business.address.map((line) => (
             <>
@@ -31,11 +43,14 @@ const year = new Date().getFullYear();
             </>
           ))}
         </address>
-        <p><a href="/location/">Location and directions</a></p>
+        <p><a class="utility-link" href="/location/"><UtilityIcon icon="location" /><span>Location and directions</span></a></p>
         <div class="site-footer__hours">
+          <UtilityIcon icon="hours" />
+          <div>
           {business.hours.map((hours) => (
             <p>{hours}</p>
           ))}
+          </div>
         </div>
       </section>
 

@@ -1,10 +1,35 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ButtonLink from "../components/ButtonLink.astro";
-import ImageHero from "../components/ImageHero.astro";
-import SectionHeading from "../components/SectionHeading.astro";
 import VisitSection from "../components/VisitSection.astro";
 import { business } from "../data/business";
+
+const menuHighlights = [
+  {
+    title: "French breads",
+    href: "/breads/",
+    image: "/images/products/breads/traditional-baguette.jpg",
+    alt: "An abundant assortment of freshly baked baguettes",
+  },
+  {
+    title: "Viennoiseries",
+    href: "/viennoiseries/",
+    image: "/images/products/viennoiseries/mini-viennoiseries-assortment.png",
+    alt: "An assortment of small French viennoiseries",
+  },
+  {
+    title: "Pastries",
+    href: "/pastry/",
+    image: "/images/products/pastries/raspberry-puff-pastry.jpg",
+    alt: "Golden raspberry puff pastries",
+  },
+  {
+    title: "Savory café",
+    href: "/savory/",
+    image: "/images/products/savory/fougasse-sandwiches.jpg",
+    alt: "Freshly prepared savory fougasse sandwiches",
+  },
+];
 ---
 
 <BaseLayout
@@ -12,103 +37,492 @@ import { business } from "../data/business";
   description="Handmade breads, pastries, cakes, crepes, and breakfast from an authentic French bakery in Parker, Colorado."
   pageClass="home-page"
 >
-  <section class="hero">
-    <div class="hero-content">
-      <p class="eyebrow">Authentic French bakery + neighborhood café</p>
-      <h1>Handcrafted breads, pastries, cakes, and crepes made fresh daily.</h1>
-      <p class="hero-intro">
-        Chef Michael Dupont brings 25 years of experience as a certified master
-        baker, chef, and chocolatier to every baguette, croissant, and specialty cake.
-      </p>
-
-      <div class="hero-actions">
-        <ButtonLink href={business.orderUrl} external>
-          Order online
-        </ButtonLink>
-        <ButtonLink href="/menu/">
-          Browse the menu
-        </ButtonLink>
-      </div>
-    </div>
-
-    <ImageHero
+  <section class="editorial-hero" aria-labelledby="home-title">
+    <img
       src="/images/site/store.jpg"
       alt="The renovated dining area inside La Baguette de Normandy"
-      width={1536}
-      height={2048}
-      priority
-    />
-  </section>
-
-  <section class="section-surface">
-    <SectionHeading
-      eyebrow="Fresh from the ovens"
-      title="Every visit is an invitation to taste something memorable."
+      width="1536"
+      height="2048"
+      loading="eager"
+      fetchpriority="high"
     />
 
-    <div class="feature-grid">
-      <article class="feature-card">
-        <h3>Special orders and celebration cakes</h3>
-        <p>
-          Custom cakes, petit fours, and seasonal gift boxes are made to order.
-          Call or stop by to plan your next celebration.
-        </p>
-        <ButtonLink href="/cakes/">See cakes</ButtonLink>
-      </article>
-
-      <article class="feature-card">
-        <h3>Breakfast, crepes, and warm pastries</h3>
-        <p>
-          Start the day with fresh croissants, savory breakfast bites, and made-to-order crepes.
-        </p>
-        <ButtonLink href="/breakfast/">View breakfast</ButtonLink>
-      </article>
-
-      <article class="feature-card">
-        <h3>Breads, viennoiseries, and bakery classics</h3>
-        <p>
-          Choose from baguettes, rustic loaves, tarts, and delicate petits fours.
-          Every item is handcrafted with French technique.
-        </p>
-        <ButtonLink href="/breads/">Shop breads</ButtonLink>
-      </article>
+    <div class="editorial-hero__card">
+      <p class="eyebrow">Authentic French bakery · Parker, Colorado</p>
+      <h1 id="home-title">A little slice of France, close to home.</h1>
+      <p>Handcrafted breads, pastries, cakes, and café favorites made with French tradition.</p>
+      <div class="hero-actions">
+        <ButtonLink href={business.orderUrl} external>Order online</ButtonLink>
+        <ButtonLink href="/menu/" class="button--quiet">Browse the menu</ButtonLink>
+      </div>
     </div>
   </section>
 
-  <section>
-    <SectionHeading title="Why people love La Baguette de Normandy">
-      <p class="home-intro">
-        A little slice of France in Colorado, rooted in French artisan tradition
-        and made welcoming for everyday bakery visits.
-      </p>
-    </SectionHeading>
+  <section class="home-manifesto" aria-labelledby="manifesto-title">
+    <p class="eyebrow">Fresh from the ovens</p>
+    <h2 id="manifesto-title">Made for slow mornings, quick lunches, and celebrations.</h2>
+    <p>
+      Chef Michael Dupont brings <strong class="experience-highlight">25 years</strong> of experience as a master baker,
+      chef, and chocolatier to the neighborhood.
+    </p>
+  </section>
 
-    <div class="text-grid">
-      <div class="feature-card">
-        <h3>Master craftsman baking</h3>
-        <p>
-          Chef Dupont is a certified master baker, chef, and chocolatier,
-          combining authentic technique with the warmth of a local bakery.
-        </p>
-      </div>
+  <section class="cafe-moment" aria-labelledby="cafe-title">
+    <div class="cafe-moment__heading">
+      <p class="eyebrow">A morning in Parker</p>
+      <h2 id="cafe-title">Come as you are. See what looks good.</h2>
+    </div>
 
-      <div class="feature-card">
-        <h3>Bakery and café</h3>
-        <p>
-          Stop in for coffee and a treat, enjoy breakfast or lunch, or pick up
-          a baguette, croissant, or pastry to take home.
-        </p>
-      </div>
+    <div class="cafe-collage">
+      <div class="cafe-collage__layout">
+        <img
+          class="cafe-collage__main"
+          src="/images/site/coffee-and-croissants.jpg"
+          alt="Coffee and croissants ready to enjoy at the café"
+          width="1171"
+          height="878"
+          loading="lazy"
+        />
 
-      <div class="feature-card">
-        <h3>Simple ordering, clear visits</h3>
-        <p>
-          Call ahead for custom cakes and special events, use our online ordering
-          link, or visit the bakery in Parker.
-        </p>
+        <img
+          class="cafe-collage__detail"
+          src="/images/products/tarts/pear-amandine-6p.jpg"
+          alt="Fresh breakfast pastries arranged in the bakery display"
+          width="640"
+          height="480"
+          loading="lazy"
+        />
+
+        <div class="cafe-collage__note">
+          <p>
+            Settle in with coffee and a croissant, stop for breakfast, or take a
+            baguette and something sweet home.
+          </p>
+          <ButtonLink href="/breakfast/">Explore breakfast</ButtonLink>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <section class="menu-showcase" aria-labelledby="menu-showcase-title">
+    <div class="menu-showcase__heading">
+      <div>
+        <p class="eyebrow">Start with what catches your eye</p>
+        <h2 id="menu-showcase-title">From the bakery cases</h2>
+      </div>
+      <a href="/menu/">View the complete menu <span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="menu-showcase__grid">
+      {menuHighlights.map((item, index) => (
+        <a class:list={["menu-tile", { "menu-tile--featured": index === 0 }]} href={item.href}>
+          <span class="menu-tile__image">
+            <img src={item.image} alt={item.alt} width="640" height="480" loading="lazy" />
+          </span>
+          <span class="menu-tile__label">
+            <span>{item.title}</span>
+            <span aria-hidden="true">→</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="celebration-stage swiss-dot" aria-labelledby="celebration-title">
+    <div class="celebration-stage__image">
+      <img
+        src="/images/products/cakes/decorated-chocolate-cake.jpg"
+        alt="An intricately decorated chocolate celebration cake"
+        width="2448"
+        height="2448"
+        loading="lazy"
+      />
+    </div>
+
+    <div class="celebration-stage__card">
+      <p class="eyebrow">Made for your occasion</p>
+      <h2 id="celebration-title">A centerpiece worth gathering around.</h2>
+      <p>Call or stop by to begin planning a cake or special bakery order.</p>
+      <ButtonLink href="/cakes/">See celebration cakes</ButtonLink>
     </div>
   </section>
 
   <VisitSection eyebrow="Visit us" title="Your next bakery stop in Parker." />
 </BaseLayout>
+
+<style>
+  .editorial-hero {
+    position: relative;
+    padding-bottom: 2rem;
+    background: var(--color-surface-warm);
+  }
+
+  .editorial-hero > img {
+    width: 100%;
+    height: min(72svh, 43rem);
+    object-fit: cover;
+    object-position: center 32%;
+  }
+
+  .editorial-hero__card {
+    position: relative;
+    width: calc(100% - 2rem);
+    max-width: 38rem;
+    margin: -2.25rem auto 0;
+    padding: 2rem 1.25rem;
+    background: var(--color-cream-050);
+    box-shadow: 0 1.25rem 3rem rgb(0 56 95 / 10%);
+  }
+
+  .editorial-hero__card h1 {
+    max-width: 11ch;
+  }
+
+  .editorial-hero__card > p:not(.eyebrow) {
+    max-width: 34rem;
+    margin-top: 1rem;
+    font-size: 1.05rem;
+  }
+
+  .editorial-hero__card :global(.button--quiet) {
+    border-color: var(--color-primary);
+    background: transparent;
+    color: var(--color-primary-dark);
+  }
+
+  .home-manifesto {
+    max-width: 52rem;
+    padding-block: 5rem;
+    text-align: center;
+  }
+
+  .home-manifesto h2 {
+    font-size: clamp(2.15rem, 8vw, 4.75rem);
+  }
+
+  .home-manifesto > p:last-child {
+    max-width: 38rem;
+    margin: 1.25rem auto 0;
+    font-size: 1.1rem;
+  }
+
+  .experience-highlight {
+    text-decoration: underline;
+    text-decoration-color: var(--color-orange-400);
+    text-decoration-thickness: 0.14em;
+    text-underline-offset: 0.12em;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .cafe-moment {
+    padding: 3rem var(--spacing-page) 3.5rem;
+    background: var(--color-primary);
+  }
+
+  .cafe-moment__heading,
+  .cafe-collage {
+    width: min(100%, var(--content-width));
+    margin-inline: auto;
+  }
+
+  .cafe-moment__heading {
+    max-width: 48rem;
+    margin-bottom: 2rem;
+  }
+
+  .cafe-moment__heading :is(h2, p) {
+    color: var(--color-white);
+  }
+
+  .cafe-moment__heading .eyebrow {
+    color: var(--color-orange-100);
+  }
+
+  .cafe-moment__heading h2 {
+    font-size: clamp(2.1rem, 8vw, 4rem);
+  }
+
+  .cafe-collage {
+    padding: 0.5rem;
+    background: var(--color-cream-050);
+    box-shadow: 0 1.5rem 3.5rem rgb(0 35 60 / 24%);
+  }
+
+  .cafe-collage__layout {
+    display: grid;
+    gap: 1rem;
+    background: var(--color-cream-050);
+  }
+
+  .cafe-collage img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .cafe-collage__main {
+    order: 1;
+    aspect-ratio: 4 / 3;
+  }
+
+  .cafe-collage__detail {
+    display: none;
+  }
+
+  .cafe-collage__note {
+    order: 2;
+    width: 100%;
+    padding: 1.5rem;
+    background: var(--color-cream-100);
+  }
+
+  .cafe-collage__note p {
+    color: var(--color-text);
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    line-height: 1.35;
+  }
+
+  .cafe-collage__note :global(.button) {
+    margin-top: 1.25rem;
+  }
+
+  .menu-showcase {
+    padding: 5rem var(--spacing-page) 6rem;
+    background: var(--color-cream-050);
+  }
+
+  .menu-showcase__heading,
+  .menu-showcase__grid {
+    width: min(100%, var(--content-width));
+    margin-inline: auto;
+  }
+
+  .menu-showcase__heading {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .menu-showcase__heading h2 {
+    font-size: clamp(2.25rem, 8vw, 4rem);
+  }
+
+  .menu-showcase__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .menu-tile {
+    display: grid;
+    min-width: 0;
+    background: var(--color-white);
+    color: var(--color-primary-dark) !important;
+  }
+
+  .menu-tile--featured {
+    grid-column: 1 / -1;
+  }
+
+  .menu-tile__image {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 1;
+    background: var(--color-blue-050);
+  }
+
+  .menu-tile--featured .menu-tile__image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .menu-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 220ms ease-out;
+  }
+
+  .menu-tile__label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    min-height: 3.5rem;
+    padding: 0.8rem;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    line-height: 1.2;
+  }
+
+  .menu-tile:hover img {
+    transform: scale(1.025);
+  }
+
+  .celebration-stage {
+    position: relative;
+    min-width: 0;
+    overflow: clip;
+    padding: 4rem var(--spacing-page) 5rem;
+    background-color: var(--color-primary);
+  }
+
+  .celebration-stage__image {
+    width: min(100%, 50rem);
+    margin-inline: auto;
+  }
+
+  .celebration-stage__image img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .celebration-stage__card {
+    position: relative;
+    width: calc(100% - 1.5rem);
+    max-width: 34rem;
+    margin: -2rem auto 0;
+    padding: 2rem 1.5rem;
+    background: var(--color-white);
+    box-shadow: 0 1.25rem 3rem rgb(0 56 95 / 10%);
+  }
+
+  .celebration-stage__card h2 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .celebration-stage__card > p:not(.eyebrow) {
+    margin-top: 1rem;
+  }
+
+  .celebration-stage__card :global(.button) {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 700px) {
+    .editorial-hero {
+      min-height: 48rem;
+      padding: 3rem;
+      background: var(--color-blue-900);
+    }
+
+    .editorial-hero > img {
+      height: min(82vh, 54rem);
+    }
+
+    .editorial-hero__card {
+      position: absolute;
+      right: clamp(2rem, 6vw, 6rem);
+      bottom: clamp(2rem, 6vw, 5rem);
+      width: min(38rem, 48%);
+      margin: 0;
+      padding: clamp(2rem, 4vw, 4rem);
+    }
+
+    .cafe-moment {
+      padding-block: 4.5rem;
+    }
+
+    .cafe-moment__heading {
+      margin-left: 0;
+      margin-bottom: 2.5rem;
+    }
+
+    .cafe-collage__layout {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-template-rows: auto 1fr;
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+
+    .cafe-collage {
+      padding: 0.75rem;
+    }
+
+    .cafe-collage__main {
+      grid-column: 1 / 9;
+      grid-row: 1 / 3;
+      height: 100%;
+      aspect-ratio: auto;
+    }
+
+    .cafe-collage__detail {
+      display: block;
+      grid-column: 9 / 13;
+      grid-row: 1 / 2;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+    }
+
+    .cafe-collage__note {
+      grid-column: 9 / 13;
+      grid-row: 2 / 3;
+      width: auto;
+      padding: clamp(1.75rem, 3vw, 2.75rem);
+    }
+
+    .menu-showcase__heading {
+      grid-template-columns: 1fr auto;
+      align-items: end;
+    }
+
+    .menu-showcase__grid {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-auto-rows: 12rem;
+      gap: 1.25rem;
+    }
+
+    .menu-tile {
+      grid-column: 8 / 13;
+      grid-template-rows: 1fr auto;
+    }
+
+    .menu-tile--featured {
+      grid-column: 1 / 8;
+      grid-row: 1 / 4;
+    }
+
+    .menu-tile__image,
+    .menu-tile--featured .menu-tile__image {
+      aspect-ratio: auto;
+    }
+
+    .menu-tile:nth-child(2) {
+      grid-row: 1;
+    }
+
+    .menu-tile:nth-child(3) {
+      grid-row: 2;
+    }
+
+    .menu-tile:nth-child(4) {
+      grid-row: 3;
+    }
+
+    .celebration-stage {
+      min-height: 58rem;
+      padding: clamp(4rem, 7vw, 7rem);
+    }
+
+    .celebration-stage__image {
+      width: min(100%, 54rem);
+      margin-left: max(0px, calc((100% - var(--content-width)) / 2));
+    }
+
+    .celebration-stage__card {
+      position: absolute;
+      right: max(3rem, calc((100% - var(--content-width)) / 2));
+      bottom: 5rem;
+      margin: 0;
+      padding: 3rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .menu-tile img {
+      transition: none;
+    }
+  }
+</style>

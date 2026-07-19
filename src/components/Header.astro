@@ -14,23 +14,20 @@ const currentPath = Astro.url.pathname;
     </div>
 
     <details class="site-menu site-menu--mobile">
-      <summary>
-        <span class="menu-toggle__label menu-toggle__label--menu">Menu</span>
-        <span class="menu-toggle__label menu-toggle__label--close">Close</span>
-
+      <summary aria-label="Primary navigation">
         <svg
           class="menu-toggle__icon menu-toggle__icon--menu"
           viewBox="0 0 24 24"
           aria-hidden="true"
         >
-          <path d="M4 7h16M4 12h16M4 17h16" />
+          <path d="M5 7.25h14M5 12h14M5 16.75h14" />
         </svg>
         <svg
           class="menu-toggle__icon menu-toggle__icon--close"
           viewBox="0 0 24 24"
           aria-hidden="true"
         >
-          <path d="m6 6 12 12M18 6 6 18" />
+          <path d="m6.75 6.75 10.5 10.5M17.25 6.75l-10.5 10.5" />
         </svg>
       </summary>
 

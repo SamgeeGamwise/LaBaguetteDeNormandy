@@ -3,6 +3,7 @@ import { business } from "../data/business";
 import { primaryNavigation } from "../data/navigation";
 import ButtonLink from "./ButtonLink.astro";
 import NavigationList from "./NavigationList.astro";
+import UtilityIcon from "./UtilityIcon.astro";
 
 interface Props {
   currentPath: string;
@@ -17,7 +18,12 @@ const { currentPath } = Astro.props;
   </nav>
 
   <div class="site-header__actions">
-    <ButtonLink href={business.phoneHref}>Call for special orders</ButtonLink>
-    <ButtonLink href={business.orderUrl} external>Order online</ButtonLink>
+    <ButtonLink href={business.phoneHref}>
+      Call for special orders
+    </ButtonLink>
+    <ButtonLink href={business.orderUrl} external>
+      Order online&nbsp;
+      <UtilityIcon icon="external" />
+    </ButtonLink>
   </div>
 </div>

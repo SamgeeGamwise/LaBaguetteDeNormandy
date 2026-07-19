@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageIntro from "../components/PageIntro.astro";
+import UtilityIcon from "../components/UtilityIcon.astro";
 import { business } from "../data/business";
 ---
 
@@ -14,31 +15,37 @@ import { business } from "../data/business";
   />
 
   <section>
-    <h2>Bakery Contact Information</h2>
+    <h2 class="utility-heading"><UtilityIcon icon="store" size="medium" /> Bakery Contact Information</h2>
 
-    <address>
+    <address class="contact-detail">
+      <UtilityIcon icon="location" />
+      <span>
       {business.address.map((line) => <>{line}<br /></>)}
+      </span>
     </address>
 
-    <p>
-      Phone: <a href={business.phoneHref}>{business.phoneDisplay}</a>
+    <p class="contact-detail">
+      <UtilityIcon icon="phone" />
+      <span>Phone: <a href={business.phoneHref}>{business.phoneDisplay}</a></span>
     </p>
 
-    <p>
-      Email: <a href={business.emailHref}>{business.emailDisplay}</a>
+    <p class="contact-detail">
+      <UtilityIcon icon="email" />
+      <span>Email: <a href={business.emailHref}>{business.emailDisplay}</a></span>
     </p>
 
     <p>{business.phoneOrderNote}</p>
 
     <p>
-      <a href={business.directionsUrl} target="_blank" rel="noopener noreferrer">
-        Get directions to the bakery
+      <a class="utility-link" href={business.directionsUrl} target="_blank" rel="noopener noreferrer">
+        <UtilityIcon icon="location" />
+        <span>Get directions to the bakery</span>
       </a>
     </p>
   </section>
 
   <section>
-    <h2>Orders</h2>
+    <h2 class="utility-heading"><UtilityIcon icon="orders" size="medium" /> Orders</h2>
 
     <p>
       A limited selection is available through our{" "}
@@ -49,7 +56,7 @@ import { business } from "../data/business";
   </section>
 
   <section>
-    <h2>Bakery Hours</h2>
+    <h2 class="utility-heading"><UtilityIcon icon="hours" size="medium" /> Bakery Hours</h2>
 
     {business.hours.map((hours) => <p>{hours}</p>)}
 

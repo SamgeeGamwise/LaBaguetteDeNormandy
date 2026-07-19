@@ -1,0 +1,99 @@
+---
+export type BakeryIconName =
+  | "berry-cake"
+  | "cream-puffs"
+  | "charlotte"
+  | "birthday-cake"
+  | "iced-brioche"
+  | "pudding"
+  | "muffin"
+  | "croissant"
+  | "tea-cake"
+  | "toast"
+  | "cookies"
+  | "layer-cake"
+  | "braided-bread"
+  | "crumb-muffin"
+  | "loaf"
+  | "pancakes"
+  | "flour";
+
+interface Props {
+  icon: BakeryIconName;
+  size?: "small" | "medium" | "large";
+  presentation?: "plain" | "badge";
+  class?: string;
+}
+
+const icons: Record<BakeryIconName, string> = {
+  "berry-cake": "/images/icons/Asset 11.svg",
+  "cream-puffs": "/images/icons/Asset 21.svg",
+  charlotte: "/images/icons/Asset 41.svg",
+  "birthday-cake": "/images/icons/Asset 51.svg",
+  "iced-brioche": "/images/icons/Asset 71.svg",
+  pudding: "/images/icons/Asset 91.svg",
+  muffin: "/images/icons/Asset 101.svg",
+  croissant: "/images/icons/Asset 121.svg",
+  "tea-cake": "/images/icons/Asset 141.svg",
+  toast: "/images/icons/Asset 171.svg",
+  cookies: "/images/icons/Asset 181.svg",
+  "layer-cake": "/images/icons/Asset 211.svg",
+  "braided-bread": "/images/icons/Asset 221.svg",
+  "crumb-muffin": "/images/icons/Asset 271.svg",
+  loaf: "/images/icons/Asset 291.svg",
+  pancakes: "/images/icons/Asset 311.svg",
+  flour: "/images/icons/Asset 331.svg",
+};
+
+const {
+  icon,
+  size = "medium",
+  presentation = "plain",
+  class: className,
+} = Astro.props;
+---
+
+<span
+  class:list={[
+    "bakery-icon",
+    `bakery-icon--${size}`,
+    `bakery-icon--${presentation}`,
+    className,
+  ]}
+  aria-hidden="true"
+>
+  <img src={icons[icon]} alt="" width="73" height="73" loading="lazy" />
+</span>
+
+<style>
+  .bakery-icon {
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+  }
+
+  .bakery-icon--small {
+    width: 2.75rem;
+  }
+
+  .bakery-icon--medium {
+    width: 4.5rem;
+  }
+
+  .bakery-icon--large {
+    width: clamp(5.5rem, 22vw, 8rem);
+  }
+
+  .bakery-icon--badge {
+    aspect-ratio: 1;
+    border: 1px solid var(--color-orange-100);
+    border-radius: 50%;
+    padding: 0.65rem;
+    background: var(--color-cream-100);
+  }
+
+  .bakery-icon img {
+    width: 100%;
+    height: auto;
+  }
+</style>

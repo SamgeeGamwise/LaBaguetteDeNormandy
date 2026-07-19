@@ -1,0 +1,41 @@
+<script>
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (!reducedMotion.matches && "IntersectionObserver" in window) {
+    const elements = document.querySelectorAll<HTMLElement>(
+      "main > section:not(:first-child), .product-card, .feature-card, .menu-tile, .category-links li",
+    );
+
+    elements.forEach((element) => {
+      const siblings = element.parentElement
+        ? Array.from(element.parentElement.children)
+        : [];
+      const siblingIndex = siblings.indexOf(element);
+
+      element.dataset.reveal = "";
+      element.style.setProperty(
+        "--reveal-delay",
+        `${Math.max(0, siblingIndex % 4) * 55}ms`,
+      );
+    });
+
+    document.documentElement.classList.add("reveal-ready");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("is-revealed");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        rootMargin: "0px 0px -8%",
+        threshold: 0.08,
+      },
+    );
+
+    elements.forEach((element) => observer.observe(element));
+  }
+</script>
