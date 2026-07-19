@@ -152,7 +152,8 @@ domain.
 
 - The project builds as a static Astro site.
 - Shared SEO output now includes canonical URLs, Open Graph and Twitter text
-  metadata, Bakery structured data, noindex handling for the 404 page, and an
+  metadata, a connected Bakery/WebSite/WebPage structured-data graph with
+  breadcrumbs on inner pages, noindex handling for the 404 page, and an
   automatically generated XML sitemap referenced from the head and robots file.
 - Lightweight Cloudflare preparation includes an explicit static Astro target, a pinned Node 22 build version, a small `wrangler.jsonc`, `robots.txt`, and a generated top-level `404.html`. The Wrangler asset configuration preserves Astro's trailing-slash routes and serves the custom 404 page for missing assets.
 - Browser identity assets are derived from the approved square logo and include multi-size ICO/PNG favicons, an Apple touch icon, 192px and 512px manifest icons, theme colors, and `site.webmanifest`; the original Astro starter favicon was removed.
@@ -168,6 +169,10 @@ domain.
 - The café collage uses a narrow warm-white editorial matte and a single soft
   shadow to separate its photography from the solid primary-blue section without
   placing gradients or effects over the images.
+- The homepage eagerly preloads responsive 720px and 1200px WebP storefront
+  variants for its likely LCP image. The mobile candidate is roughly 128 KB,
+  compared with about 436 KB for the original JPEG fallback; below-fold homepage
+  imagery uses lazy loading and asynchronous decoding.
 - Large homepage photographs remain unobscured. Solid cards overlap image edges
   to connect copy with photography without gradients. The checkerboard motif was
   removed after visual review and should not be reintroduced.
@@ -192,6 +197,10 @@ domain.
 - Page-specific copy remains in each route so content can be edited without tracing it through a generalized content abstraction.
 - The typed product collection contains 149 offerings pulled from the live legacy site on 2026-07-17: 103 published menu entries with prices and 46 additional named offerings identified only through gallery labels.
 - Product listings are rendered from that collection on the main `/menu/` landing page, the ten core menu/category routes, and the two holiday routes. The main menu groups products by category beneath its category jump links. Cards use consistent responsive columns, a fixed 4:3 image area with center-cropped cover images, a standardized product-name area, and bottom-aligned price/size details; missing fields retain their layout space without displaying invented content.
+- Product cards load dedicated 640×480 WebP derivatives instead of the much
+  larger archival product files. A repeatable Sharp-based prebuild task creates
+  those derivatives from the referenced catalog images, preserving the original
+  runtime files for larger editorial placements while reducing mobile transfer.
 - All 141 product records that previously referenced a legacy-site image now use verified local files under `public/images/products/`; the remaining 8 records intentionally display an image placeholder.
 - Product records retain a source URL and source type. Descriptions, images, prices, sizes, and availability are optional so missing legacy information is not invented.
 - Published prices are a migration snapshot and must be confirmed with the client before launch. Gallery-only entries do not assert a price or current availability.

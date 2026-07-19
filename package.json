@@ -7,11 +7,13 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "npm run optimize:images",
     "build": "astro build",
     "deploy": "wrangler deploy",
     "preview": "astro preview",
     "sync": "astro sync",
-    "astro": "astro"
+    "astro": "astro",
+    "optimize:images": "node scripts/optimize-product-images.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
@@ -24,6 +26,7 @@
     "fsevents@2.3.3": true
   },
   "devDependencies": {
+    "sharp": "^0.35.3",
     "wrangler": "^4.112.0"
   }
 }

@@ -24,17 +24,22 @@ const formattedPrice =
         currency: "USD",
       }).format(priceCents / 100)
     : null);
+
+const cardImage = image
+  ?.replace(/^\/images\/products\//, "/images/product-cards/")
+  .replace(/\.[^.]+$/, ".webp");
 ---
 
 <article class="product-card">
   <div class="product-card__media">
-    {image ? (
+    {cardImage ? (
       <img
-        src={image}
+        src={cardImage}
         alt={alt ?? name}
-        width="600"
-        height="450"
+        width="640"
+        height="480"
         loading="lazy"
+        decoding="async"
       />
     ) : (
       <span>Image coming soon</span>

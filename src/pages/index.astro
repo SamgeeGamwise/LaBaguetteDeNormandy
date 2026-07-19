@@ -38,14 +38,21 @@ const menuHighlights = [
   pageClass="home-page"
 >
   <section class="editorial-hero" aria-labelledby="home-title">
-    <img
-      src="/images/site/store.jpg"
-      alt="The renovated dining area inside La Baguette de Normandy"
-      width="1536"
-      height="2048"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <picture>
+      <source
+        type="image/webp"
+        srcset="/images/site/optimized/store-720.webp 720w, /images/site/optimized/store-1200.webp 1200w"
+        sizes="(min-width: 1100px) calc(100vw - 18rem), 100vw"
+      />
+      <img
+        src="/images/site/store.jpg"
+        alt="The renovated dining area inside La Baguette de Normandy"
+        width="1536"
+        height="2048"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </picture>
 
     <div class="editorial-hero__card">
       <p class="eyebrow">Authentic French bakery · Parker, Colorado</p>
@@ -82,6 +89,7 @@ const menuHighlights = [
           width="1171"
           height="878"
           loading="lazy"
+          decoding="async"
         />
 
         <img
@@ -91,6 +99,7 @@ const menuHighlights = [
           width="640"
           height="480"
           loading="lazy"
+          decoding="async"
         />
 
         <div class="cafe-collage__note">
@@ -117,7 +126,14 @@ const menuHighlights = [
       {menuHighlights.map((item, index) => (
         <a class:list={["menu-tile", { "menu-tile--featured": index === 0 }]} href={item.href}>
           <span class="menu-tile__image">
-            <img src={item.image} alt={item.alt} width="640" height="480" loading="lazy" />
+            <img
+              src={item.image}
+              alt={item.alt}
+              width="640"
+              height="480"
+              loading="lazy"
+              decoding="async"
+            />
           </span>
           <span class="menu-tile__label">
             <span>{item.title}</span>
@@ -136,6 +152,7 @@ const menuHighlights = [
         width="2448"
         height="2448"
         loading="lazy"
+        decoding="async"
       />
     </div>
 
@@ -157,8 +174,16 @@ const menuHighlights = [
     background: var(--color-surface-warm);
   }
 
-  .editorial-hero > img {
+  .editorial-hero > picture,
+  .editorial-hero > picture img {
     width: 100%;
+  }
+
+  .editorial-hero > picture {
+    display: block;
+  }
+
+  .editorial-hero > picture img {
     height: min(72svh, 43rem);
     object-fit: cover;
     object-position: center 32%;
@@ -408,7 +433,7 @@ const menuHighlights = [
       background: var(--color-blue-900);
     }
 
-    .editorial-hero > img {
+    .editorial-hero > picture img {
       height: min(82vh, 54rem);
     }
 
