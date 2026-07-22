@@ -1,0 +1,56 @@
+---
+import { business } from "../../business";
+
+const onMenuPage = Astro.url.pathname.startsWith("/menu");
+const onAboutPage = Astro.url.pathname.startsWith("/about");
+---
+
+<header class="site-header">
+  <div class="announcement">
+    <div class="shell announcement-inner">
+      <p><span class="announcement-dot" aria-hidden="true"></span> Open Tuesday–Saturday</p>
+      <p class="announcement-location">French bakery &amp; cafe in Parker, Colorado</p>
+      <a href={business.phoneHref}>{business.phoneDisplay}</a>
+    </div>
+  </div>
+
+  <div class="shell nav-row">
+    <a class="brand" href="/" aria-label={`${business.name} home`}>
+      <img src="/logo_square.webp" alt="" width="52" height="52" />
+      <span class="brand-type">
+        <strong>La Baguette</strong>
+        <span>de Normandy</span>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="/about/" aria-current={onAboutPage ? "page" : undefined}>Our story</a>
+      <a href="/menu/" aria-current={onMenuPage ? "page" : undefined}>Menu</a>
+      <a href="/#visit">Visit</a>
+    </nav>
+
+    <a class="button button-small header-order" href={business.orderUrl}>Order online</a>
+
+    <details class="mobile-menu" data-mobile-menu>
+      <summary aria-label="Navigation menu">
+        <span></span><span></span><span></span>
+      </summary>
+      <nav aria-label="Mobile navigation">
+        <a href="/">Home</a>
+        <a href="/about/" aria-current={onAboutPage ? "page" : undefined}>Our story</a>
+        <a href="/menu/" aria-current={onMenuPage ? "page" : undefined}>Menu</a>
+        <a href="/#visit">Visit</a>
+        <a href={business.phoneHref}>Call&nbsp;{business.phoneDisplay}</a>
+        <a class="button" href={business.orderUrl}>Order online</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<script>
+  document.querySelectorAll("[data-mobile-menu] a").forEach((link) => {
+    link.addEventListener("click", () => {
+      link.closest("details")?.removeAttribute("open");
+    });
+  });
+</script>

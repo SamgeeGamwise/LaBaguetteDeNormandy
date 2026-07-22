@@ -1,0 +1,241 @@
+---
+import { business } from "../../business";
+import { ArrowUp, Search } from "@lucide/astro";
+import { categoryDefinitions } from "../data/categories";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { formatPrice, getProductCardImage, products } from "../lib/products";
+
+const catalogGroups = categoryDefinitions.map((category) => ({
+  ...category,
+  products: products.filter((product) => product.category === category.slug),
+}));
+
+const categoriesBySlug = new Map(
+  categoryDefinitions.map((category) => [category.slug, category]),
+);
+
+---
+
+<BaseLayout
+  title={`Menu | ${business.name}`}
+  description="Explore French breads, croissants, pastries, cakes, savory breakfast and lunch, crepes, and seasonal favorites from La Baguette de Normandy in Parker, Colorado."
+  canonicalPath="/menu/"
+>
+  <section class="menu-hero">
+    <div class="shell menu-hero-grid">
+      <div>
+        <p class="eyebrow eyebrow-light">The bakery counter</p>
+        <h1>Our menu,<br /><em>made in the French tradition.</em></h1>
+        <p>
+          From the first croissant of the morning to a cake worth celebrating, there is
+          always something good waiting at the bakery.
+        </p>
+        <div class="menu-hero-actions">
+          <a class="button button-cream" href={business.orderUrl}>Order online</a>
+          <a class="text-link text-link-light" href={business.phoneHref}>Call&nbsp;{business.phoneDisplay}</a>
+        </div>
+      </div>
+
+      <div class="menu-hero-art" aria-hidden="true">
+        <figure class="menu-art-large">
+          <img
+            src="/images/product-cards/viennoiseries/french-butter-croissant.webp"
+            alt=""
+            width="640"
+            height="480"
+          />
+        </figure>
+        <figure class="menu-art-small">
+          <img
+            src="/images/product-cards/cakes/strawberry-cake-6p.webp"
+            alt=""
+            width="640"
+            height="480"
+          />
+        </figure>
+        <span class="menu-art-badge">Authentic<br />French<br />Baking</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-catalog section" data-menu-catalog>
+    <div class="shell">
+      <div class="catalog-intro">
+        <div>
+          <p class="eyebrow">Find your favorite</p>
+          <h2>Everything at a glance.</h2>
+        </div>
+        <p>
+          Prices are shown where currently published. Selection and availability can
+          change, so call the bakery for today's case or custom-order details.
+        </p>
+      </div>
+
+      <form class="menu-search" id="menu-search" role="search" data-menu-search>
+        <label>
+          <span>Search the menu</span>
+          <span class="search-field">
+            <Search aria-hidden="true" />
+            <input id="menu-query" type="search" placeholder="Try “croissant” or “chocolate”" autocomplete="off" />
+          </span>
+        </label>
+        <button type="submit">Search</button>
+        <button type="reset">Clear</button>
+        <output aria-live="polite" data-search-status></output>
+      </form>
+
+      <nav class="category-nav" aria-label="Menu categories">
+        {catalogGroups.map((group) => (
+          <a href={`#${group.slug}`} data-category-link={group.slug}>
+            {group.shortLabel}
+          </a>
+        ))}
+      </nav>
+
+      <div class="catalog-groups">
+        {catalogGroups.map((group) => (
+          <section class="catalog-group" id={group.slug} data-menu-group>
+            <header class="catalog-group-heading">
+              <div>
+                <h2>{group.label}</h2>
+                <p>{group.description}</p>
+              </div>
+              <a href="#menu-search" aria-label="Back to menu search and categories"><ArrowUp aria-hidden="true" /></a>
+            </header>
+
+            <ul class="menu-list">
+              {group.products.map((product) => (
+                <li
+                  class="menu-item"
+                  data-menu-item
+                  data-search={[
+                    product.name,
+                    product.category,
+                    categoriesBySlug.get(product.category)?.label,
+                    product.description,
+                    ...(product.searchTerms ?? []),
+                  ].filter(Boolean).join(" ")}
+                >
+                  {getProductCardImage(product) && (
+                    <figure class="menu-item-photo">
+                      <img
+                        src={getProductCardImage(product)}
+                        alt={product.alt ?? product.name}
+                        width="160"
+                        height="120"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </figure>
+                  )}
+                  <div class="menu-item-copy">
+                    <h3>{product.name}</h3>
+                    {(product.sizeText || product.description) && (
+                      <p>{[product.sizeText, product.description].filter(Boolean).join(" · ")}</p>
+                    )}
+                  </div>
+                  <span class:list={["menu-price", { "menu-price-call": product.priceCents === undefined }]}>
+                    {formatPrice(product.priceCents)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+
+      <div class="catalog-note">
+        <p>
+          <strong>Prices are listed where currently available.</strong>
+          For seasonal and custom items, call before <time datetime="13:00">1:00&nbsp;PM</time>.
+        </p>
+        <a class="button" href={business.phoneHref}>Call&nbsp;the&nbsp;bakery</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const searchForm = document.querySelector<HTMLFormElement>("[data-menu-search]");
+    const searchInput = searchForm?.querySelector<HTMLInputElement>("input[type='search']");
+    const searchStatus = searchForm?.querySelector<HTMLOutputElement>("[data-search-status]");
+    const menuItems = Array.from(document.querySelectorAll<HTMLElement>("[data-menu-item]"));
+    const menuGroups = Array.from(document.querySelectorAll<HTMLElement>("[data-menu-group]"));
+    const categoryLinks = Array.from(document.querySelectorAll<HTMLElement>("[data-category-link]"));
+
+    const normalizeSearch = (value: string) =>
+      value.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLocaleLowerCase();
+
+    const editDistance = (first: string, second: string) => {
+      const previous = Array.from({ length: second.length + 1 }, (_, index) => index);
+
+      for (let firstIndex = 1; firstIndex <= first.length; firstIndex += 1) {
+        let diagonal = previous[0];
+        previous[0] = firstIndex;
+
+        for (let secondIndex = 1; secondIndex <= second.length; secondIndex += 1) {
+          const above = previous[secondIndex];
+          previous[secondIndex] = Math.min(
+            previous[secondIndex] + 1,
+            previous[secondIndex - 1] + 1,
+            diagonal + (first[firstIndex - 1] === second[secondIndex - 1] ? 0 : 1),
+          );
+          diagonal = above;
+        }
+      }
+
+      return previous[second.length];
+    };
+
+    const matchesSearch = (searchText: string, query: string) => {
+      if (!query) return true;
+
+      const normalizedText = normalizeSearch(searchText);
+      if (normalizedText.includes(query)) return true;
+
+      const searchableWords = normalizedText.match(/[a-z0-9]+/g) ?? [];
+      const queryWords = query.match(/[a-z0-9]+/g) ?? [];
+
+      return queryWords.every((queryWord) =>
+        searchableWords.some((searchableWord) => {
+          if (searchableWord.includes(queryWord)) return true;
+          if (queryWord.length < 4) return false;
+
+          const allowedEdits = queryWord.length >= 8 ? 2 : 1;
+          return Math.abs(searchableWord.length - queryWord.length) <= allowedEdits
+            && editDistance(searchableWord, queryWord) <= allowedEdits;
+        }),
+      );
+    };
+
+    const updateCatalog = () => {
+      const query = normalizeSearch(searchInput?.value.trim() ?? "");
+      let visibleCount = 0;
+
+      menuItems.forEach((item) => {
+        const matches = matchesSearch(item.dataset.search ?? "", query);
+        item.hidden = !matches;
+        if (matches) visibleCount += 1;
+      });
+
+      menuGroups.forEach((group) => {
+        const hasVisibleItems = Boolean(group.querySelector("[data-menu-item]:not([hidden])"));
+        group.hidden = !hasVisibleItems;
+
+        const categoryLink = categoryLinks.find(
+          (link) => link.dataset.categoryLink === group.id,
+        );
+        if (categoryLink) categoryLink.hidden = !hasVisibleItems;
+      });
+
+      if (searchStatus) {
+        searchStatus.textContent = query
+          ? visibleCount > 0 ? "Matching items shown" : "No matching items"
+          : "";
+      }
+    };
+
+    searchForm?.addEventListener("submit", (event) => event.preventDefault());
+    searchInput?.addEventListener("input", updateCatalog);
+    searchForm?.addEventListener("reset", () => requestAnimationFrame(updateCatalog));
+  </script>
+</BaseLayout>

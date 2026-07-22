@@ -1,0 +1,57 @@
+---
+import { business } from "../../business";
+import { ArrowUpRight } from "@lucide/astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="awning-stripe" aria-hidden="true"></div>
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <p class="eyebrow eyebrow-light">La Baguette de Normandy</p>
+      <p class="footer-statement">French baking,<br />made for Parker.</p>
+    </div>
+
+    <div>
+      <h2>Come by</h2>
+      <address>
+        {business.address.map((line) => <span>{line}</span>)}
+      </address>
+      <a class="text-link text-link-light" href={business.directionsUrl}>Get directions <ArrowUpRight aria-hidden="true" /></a>
+    </div>
+
+    <div>
+      <h2>Say bonjour</h2>
+      <a href={business.phoneHref}>{business.phoneDisplay}</a>
+      <a href={business.emailHref}>{business.emailDisplay}</a>
+      <div class="social-links" aria-label="Social media">
+        <a
+          href={business.facebookUrl}
+          aria-label={`${business.name} on Facebook`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M13.7 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5H17V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.5V13h2.8v8h3.4Z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <nav aria-label="Footer navigation">
+      <h2>Explore</h2>
+      <a href="/">Home</a>
+      <a href="/about/">Our story</a>
+      <a href="/menu/">Menu</a>
+      <a href="/#visit">Hours &amp; location</a>
+      <a href="/employment/">Careers</a>
+      <a href={business.orderUrl}>Order online <ArrowUpRight aria-hidden="true" /></a>
+    </nav>
+  </div>
+
+  <div class="shell footer-bottom">
+    <p>© {currentYear} {business.name}</p>
+    <p>French bakery · Patisserie · Cafe</p>
+  </div>
+</footer>

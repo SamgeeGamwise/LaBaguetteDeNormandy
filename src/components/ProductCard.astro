@@ -1,0 +1,38 @@
+---
+import { categoryDefinitions } from "../data/categories";
+import { ArrowUpRight } from "@lucide/astro";
+import { formatPrice, getProductCardImage, type Product } from "../lib/products";
+
+type Props = {
+  product: Product;
+};
+
+const { product } = Astro.props;
+const image = getProductCardImage(product);
+const category = categoryDefinitions.find((item) => item.slug === product.category);
+---
+
+<article class="product-card">
+  <a href={`/menu/#${product.category}`}>
+    <figure>
+      {image && (
+        <img
+          src={image}
+          alt={product.alt ?? product.name}
+          width="640"
+          height="480"
+          loading="lazy"
+          decoding="async"
+        />
+      )}
+      <span class="product-arrow" aria-hidden="true"><ArrowUpRight /></span>
+    </figure>
+    <div class="product-card-copy">
+      <div>
+        <p>{category?.shortLabel ?? product.category}</p>
+        <h3>{product.name}</h3>
+      </div>
+      <span>{formatPrice(product.priceCents)}</span>
+    </div>
+  </a>
+</article>

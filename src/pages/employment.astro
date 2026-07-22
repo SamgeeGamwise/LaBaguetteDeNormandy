@@ -1,0 +1,36 @@
+---
+import { business } from "../../business";
+import { Sparkles } from "@lucide/astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title={`Careers | ${business.name}`}
+  description="Interested in working at La Baguette de Normandy? Learn how bakers, pastry chefs, and customer service professionals can share a resume with the Parker bakery."
+  canonicalPath="/employment/"
+>
+  <section class="employment-page">
+    <div class="shell employment-grid">
+      <div class="employment-copy">
+        <p class="eyebrow">Join the team</p>
+        <h1>Good work starts<br /><em>with good people.</em></h1>
+        <p>
+          Interested in working at La Baguette de Normandy? We welcome resumes from
+          bakers, pastry chefs, and customer service professionals who care about great
+          food and warm hospitality.
+        </p>
+      </div>
+
+      <aside class="employment-card">
+        <Sparkles aria-hidden="true" />
+        <p class="employment-card-label">Introduce yourself</p>
+        <h2>Send us your resume.</h2>
+        <p>
+          Tell us a little about your experience and the kind of role you are looking for.
+        </p>
+        <a class="button button-cream" href={business.hiringEmailHref}>Email the bakery</a>
+        <a class="employment-email" href={business.hiringEmailHref}>{business.hiringEmailDisplay}</a>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,90 @@
+---
+import socialImage from "../assets/site/coffee-and-croissants.webp";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { business } from "../../business";
+import "../styles/global.css";
+
+type Props = {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  noindex?: boolean;
+};
+
+const {
+  title = `${business.name} | French Bakery in Parker, Colorado`,
+  description = business.description,
+  canonicalPath = Astro.url.pathname,
+  noindex = false,
+} = Astro.props;
+
+const canonicalUrl = new URL(canonicalPath, Astro.site ?? Astro.url);
+const socialImageUrl = new URL(socialImage.src, Astro.site ?? Astro.url);
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Bakery", "CafeOrCoffeeShop"],
+  "@id": `${business.siteUrl}/#bakery`,
+  name: business.name,
+  url: business.siteUrl,
+  description: business.description,
+  image: socialImageUrl.href,
+  logo: `${business.siteUrl}/logo_square.webp`,
+  telephone: business.phoneInternational,
+  email: business.emailDisplay,
+  priceRange: "$–$$",
+  servesCuisine: ["French", "Bakery"],
+  address: {
+    "@type": "PostalAddress",
+    ...business.addressDetails,
+  },
+  openingHoursSpecification: business.schedule
+    .filter((entry) => "opens" in entry)
+    .map((entry) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: entry.schemaDays,
+      opens: entry.opens,
+      closes: entry.closes,
+    })),
+  hasMenu: `${business.siteUrl}/menu/`,
+  sameAs: [business.facebookUrl],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#123e4e" />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/webp" href="/logo_square.webp" />
+    <link rel="apple-touch-icon" href="/logo_square.webp" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={business.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:alt" content="Coffee and fresh croissants at La Baguette de Normandy" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <title>{title}</title>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

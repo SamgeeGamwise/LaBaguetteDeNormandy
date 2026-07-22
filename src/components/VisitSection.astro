@@ -1,0 +1,63 @@
+---
+import { business } from "../../business";
+import { ArrowUpRight } from "@lucide/astro";
+---
+
+<section class="visit-section" id="visit">
+  <div class="awning-stripe" aria-hidden="true"></div>
+  <div class="shell visit-heading">
+    <div>
+      <p class="eyebrow eyebrow-light">Visit the cafe</p>
+      <h2>Your table is waiting.</h2>
+    </div>
+    <p>
+      Start with coffee and a croissant, stay for lunch, and take a baguette home.
+      We are tucked into Parker, just off Keystone Boulevard.
+    </p>
+  </div>
+
+  <div class="shell visit-grid">
+    <article class="visit-card visit-card-address">
+      <h3 class="visit-label">Find us</h3>
+      <address>
+        {business.address.map((line) => <span>{line}</span>)}
+      </address>
+      <a class="text-link" href={business.directionsUrl}>Get directions <ArrowUpRight aria-hidden="true" /></a>
+    </article>
+
+    <article class="visit-card">
+      <h3 class="visit-label">Bakery hours</h3>
+      <dl class="hours-list">
+        {business.schedule.map((entry) => (
+          <div><dt>{entry.shortLabel}</dt><dd>{entry.display}</dd></div>
+        ))}
+      </dl>
+    </article>
+
+    <article class="visit-card visit-card-order">
+      <p class="visit-label">Plan an order</p>
+      <h3>Something special in mind?</h3>
+      <p>Limited items are online. For bakery orders, call us before <time datetime="13:00">1:00&nbsp;PM</time>.</p>
+      <div class="visit-actions">
+        <a class="button button-cream" href={business.orderUrl}>Order online</a>
+        <a class="text-link text-link-light" href={business.phoneHref}>Call&nbsp;{business.phoneDisplay}</a>
+      </div>
+    </article>
+  </div>
+
+  <div class="shell location-map">
+    <iframe
+      src={business.mapEmbedUrl}
+      title={`Map showing ${business.name} in Parker, Colorado`}
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen
+    ></iframe>
+    <div class="location-map-callout">
+      <p class="visit-label">Our location</p>
+      <strong>{business.name}</strong>
+      <address>{business.address.join(", ")}</address>
+      <a class="button button-cream" href={business.directionsUrl}>Open in Google Maps <ArrowUpRight aria-hidden="true" /></a>
+    </div>
+  </div>
+</section>
