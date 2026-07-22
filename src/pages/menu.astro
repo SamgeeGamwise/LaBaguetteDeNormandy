@@ -14,12 +14,39 @@ const categoriesBySlug = new Map(
   categoryDefinitions.map((category) => [category.slug, category]),
 );
 
+const menuSchema = {
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "@id": `${business.siteUrl}/menu/#menu`,
+  name: `${business.name} Menu`,
+  url: `${business.siteUrl}/menu/`,
+  hasMenuSection: catalogGroups.map((group) => ({
+    "@type": "MenuSection",
+    name: group.label,
+    description: group.description,
+    hasMenuItem: group.products.map((product) => ({
+      "@type": "MenuItem",
+      name: product.name,
+      ...(product.description && { description: product.description }),
+      ...(typeof product.priceCents === "number" && {
+        offers: {
+          "@type": "Offer",
+          price: (product.priceCents / 100).toFixed(2),
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+        },
+      }),
+    })),
+  })),
+};
+
 ---
 
 <BaseLayout
   title={`Menu | ${business.name}`}
   description="Explore French breads, croissants, pastries, cakes, savory breakfast and lunch, crepes, and seasonal favorites from La Baguette de Normandy in Parker, Colorado."
   canonicalPath="/menu/"
+  structuredData={menuSchema}
 >
   <section class="menu-hero">
     <div class="shell menu-hero-grid">

@@ -23,9 +23,8 @@ const chefSchema = {
   title={`Chef Michael Dupont & Our Story | ${business.name}`}
   description="Meet Chef Michael Dupont, the certified master baker, chef, and chocolatier bringing 25 years of French craft to La Baguette de Normandy in Parker, Colorado."
   canonicalPath="/about/"
+  structuredData={chefSchema}
 >
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(chefSchema)} />
-
   <section class="about-hero">
     <div class="shell about-hero-grid">
       <div class="about-hero-copy">

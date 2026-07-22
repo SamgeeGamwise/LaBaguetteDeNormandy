@@ -10,6 +10,7 @@ type Props = {
   description?: string;
   canonicalPath?: string;
   noindex?: boolean;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
 };
 
 const {
@@ -17,10 +18,14 @@ const {
   description = business.description,
   canonicalPath = Astro.url.pathname,
   noindex = false,
+  structuredData = [],
 } = Astro.props;
 
 const canonicalUrl = new URL(canonicalPath, Astro.site ?? Astro.url);
 const socialImageUrl = new URL(socialImage.src, Astro.site ?? Astro.url);
+const additionalStructuredData = Array.isArray(structuredData)
+  ? structuredData
+  : [structuredData];
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -50,6 +55,34 @@ const localBusinessSchema = {
   hasMenu: `${business.siteUrl}/menu/`,
   sameAs: [business.facebookUrl],
 };
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${business.siteUrl}/#website`,
+  url: `${business.siteUrl}/`,
+  name: business.name,
+  inLanguage: "en-US",
+  publisher: { "@id": `${business.siteUrl}/#bakery` },
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${canonicalUrl.href}#webpage`,
+  url: canonicalUrl.href,
+  name: title,
+  description,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${business.siteUrl}/#website` },
+  about: { "@id": `${business.siteUrl}/#bakery` },
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: socialImageUrl.href,
+    width: 1171,
+    height: 878,
+  },
+};
 ---
 
 <!doctype html>
@@ -60,24 +93,37 @@ const localBusinessSchema = {
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#123e4e" />
-    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+    <meta
+      name="robots"
+      content={noindex
+        ? "noindex, follow"
+        : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"}
+    />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en-US" href={canonicalUrl} />
     <link rel="icon" type="image/webp" href="/logo_square.webp" />
     <link rel="apple-touch-icon" href="/logo_square.webp" />
 
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content={business.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1171" />
+    <meta property="og:image:height" content="878" />
     <meta property="og:image:alt" content="Coffee and fresh croissants at La Baguette de Normandy" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content="Coffee and fresh croissants at La Baguette de Normandy" />
     <title>{title}</title>
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    {!noindex && [localBusinessSchema, websiteSchema, webPageSchema, ...additionalStructuredData].map((schema) => (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>

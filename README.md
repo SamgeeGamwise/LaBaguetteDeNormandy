@@ -6,6 +6,8 @@ An Astro-powered MVP for the Parker, Colorado French bakery. The site is fully s
 - A crawlable menu generated from `products.yaml`
 - Lightweight, framework-free menu search
 - Local business metadata, canonical URLs, sitemap, and robots output
+- Open Graph and X/Twitter sharing metadata with an absolute social image
+- WebSite, WebPage, Bakery/Cafe, menu, and chef structured data
 
 Use Node.js 22.12 or newer (Node 24 is pinned in `.node-version`).
 
@@ -31,6 +33,10 @@ The static production output is written to `dist/`.
 Astro also emits portable, instant HTML redirects for the former site routes listed in
 `astro.config.mjs`. Once the deployment host is selected, configure the same mappings as
 HTTP 301 or 308 redirects at the platform/server level for the strongest migration signal.
+
+The production domain is set with Astro's `site` option in `astro.config.mjs`. Keep it in
+sync if the canonical domain changes; canonical links, social URLs, structured data,
+robots.txt, and the generated sitemap all depend on it.
 
 ## Updating content
 
